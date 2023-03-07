@@ -86,8 +86,6 @@
                       @endif
                   @endauth
               @endif
-          
-            
         </ul>
         </div>
     </div>
