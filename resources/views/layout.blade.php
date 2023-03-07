@@ -23,27 +23,27 @@
         <img class="ilogo" src="{{asset("img/logo.png") }}" alt="">
     </div>
     <div class="linkheadar">
-        <ul class="d-flex me-3 ">
+        <ul class="d-flex me-3 p-0">
             <li class="me-4 "><b><a href="#" class="link">Home</a></b></li>
             <li class="me-4 "><b><a href="#" class="link">Livres</a></b></li>
             <li class="me-4 "><b><a href="#"class="link">Article</a></b></li>
             <li class="me-4 "><b><a href="#" class="link">contact</a></b></li>
         </ul>
     </div>
-    <div class="log">
-    @if (Route::has('login'))
-    <div class="px-6 py-4 me-2">
-        @auth
-            <a href="{{ url('/dashboard') }}" class="text-white">Dashboard</a>
-        @else
-            <a href="{{ route('login') }}" type="button" class="btn btn-outline-light login">Log in</a>
-            @if (Route::has('register'))
-<a href="{{ route('register') }}" class="btn btn-light register">Register</a>
-            @endif
-        @endauth
+        <div class="log">
+        @if (Route::has('login'))
+        <div class="px-6 py-4 me-2">
+            @auth
+                <a href="{{ url('/dashboard') }}" class="text-white">Dashboard</a>
+            @else
+                <a href="{{ route('login') }}" type="button" class="btn btn-outline-primary login">Log in</a>
+                @if (Route::has('register'))
+    <a href="{{ route('register') }}" class="btn btn-primary register">Register</a>
+                @endif
+            @endauth
+        </div>
+    @endif
     </div>
-@endif
-</div>
 {{-- respo --}}
 <div class="respo">
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -60,21 +60,34 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Livres</a>
             </li>
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Article</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+            </li>
+            
+              @if (Route::has('login'))
+                  @auth
+                  <li class="nav-item">
+                    <a href="{{ url('/dashboard') }}" class="nav-link">Dashboard</a>
+                  </li>
+                  @else
+                    <li class="nav-item">
+                      <a href="{{ route('login') }}" 
+                      class="nav-link">Log in</a>
+                    </li>
+                      @if (Route::has('register'))
+                      <li class="nav-item">
+                         <a href="{{ route('register') }}" class="nav-link">Register</a>
+                      </li>
+                      @endif
+                  @endauth
+              @endif
+          
+            
         </ul>
         </div>
     </div>
