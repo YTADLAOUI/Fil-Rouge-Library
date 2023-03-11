@@ -16,10 +16,9 @@ return new class extends Migration
         Schema::create('branches', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->integer('promo_id');
-            $table->foreignId('promo_id')
-                  ->constrained('promos')
-                  ->onUpdate('cascade');
+            $table->unsignedBigInteger('promo_id');
+            $table->foreign('promo_id')
+                   ->references('id')->on('promos');
             $table->timestamps();
         });
     }
@@ -31,6 +30,7 @@ return new class extends Migration
      */
     public function down()
     {
+        // $table->dropForeign(['promo_id']);
         Schema::dropIfExists('branches');
     }
 };

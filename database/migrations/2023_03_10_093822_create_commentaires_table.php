@@ -15,17 +15,21 @@ return new class extends Migration
     {
         Schema::create('commentaires', function (Blueprint $table) {
             $table->id();
-            $table->text('contant');
-            $table->integer('livre_id');
-            $table->foreignId('livre_id')
-                  ->constrained('livres')
+            $table->text('content');
+            $table->unsignedBigInteger('livre_id');
+            $table->foreign('livre_id')
+                  ->references('id')->on('livres')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');
-            $table->integer('article_id');
-            $table->foreignId('article_id')
-                  ->constrained('articles')
+            $table->unsignedBigInteger('article_id');
+            $table->foreign('article_id')
+                  ->references('id')->on('articles')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');
+                  $table->unsignedBigInteger('etudiant_id');
+            $table->foreign('etudiant_id')
+            ->references('id')->on('users');
+
                 
             $table->timestamps();
         });

@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class CumpusPromo extends Model
 {
     use HasFactory;
+    protected $fillable=['cumpuses_id','promo_id'];
 }

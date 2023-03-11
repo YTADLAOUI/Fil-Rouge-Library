@@ -19,17 +19,15 @@ return new class extends Migration
             $table->dateTime('datePublication');
             $table->text('resume');
             $table->integer('quantite');
-            $table->dateTime('dateEmprunt');
-            $table->dateTime('dateRetour');
-            $table->integer('categories_id');
-            $table->foreignId('categories_id')
-                  ->constrained('categories');
-            $table->integer('auteure_id');
-            $table->foreignId('auteure_id')
-                  ->constrained('auteures');
-            $table->integer('admin_id');
-            $table->foreignId('admin_id')
-                  ->constrained('users');
+            $table->unsignedBigInteger('categories_id');
+            $table->foreign('categories_id')
+                  ->references('id')->on('categories');
+            $table->unsignedBigInteger('auteure_id');
+            $table->foreign('auteure_id')
+                  ->references('id')->on('auteures');
+            $table->unsignedBigInteger('admin_id');
+            $table->foreign('admin_id')
+                  ->references('id')->on('users');
             $table->timestamps();
         });
     }

@@ -16,12 +16,15 @@ return new class extends Migration
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
             $table->date('dateReservation');
-            $table->integer('etudiant_id');
-            $table->foreignId('etudiant_id')
-            ->constrained('users');
-            $table->integer('livre_id');
-            $table->foreignId('livre_id')
-            ->constrained('livres');
+            $table->date('dateEmprunt');
+            $table->date('datePreuveReturn');
+            $table->date('dateDeReturn');
+            $table->unsignedBigInteger('etudiant_id');
+            $table->foreign('etudiant_id')
+            ->references('id')->on('users');
+            $table->unsignedBigInteger('livre_id');
+            $table->foreign('livre_id')
+            ->references('id')->on('livres');
             $table->timestamps();
         });
     }

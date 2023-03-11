@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('cumpus_promos', function (Blueprint $table) {
             $table->id();
-            $table->integer('cumpuses_id');
-            $table->foreignId('cumpuses_id')
-            ->constrained('cumpuses');
-            $table->integer('promo_id');
-            $table->foreignId('promo_id')
-            ->constrained('promos');
+            $table->unsignedBigInteger('cumpuses_id');
+            $table->foreign('cumpuses_id')
+            ->references('id')->on('cumpuses');
+            $table->unsignedBigInteger('promo_id');
+            $table->foreign('promo_id')
+            ->references('id')->on('promos');
             
             $table->timestamps();
         });

@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('groupes', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('branche_id');
-            $table->foreignId('branche_id')
-            ->constrained('branches');
+            $table->unsignedBigInteger('branche_id');
+            $table->foreign('branche_id')
+            ->references('id')->on('branches');
             $table->timestamps();
         });
     }

@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Cumpus extends Model
 {
     use HasFactory;
+    protected $fillable=['nom'];
 }

@@ -16,16 +16,13 @@ return new class extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('titre');
-            $table->text('contant');
-            $table->integer('status')->default(1);
-            $table->integer('categories_id');
-            $table->foreignId('categories_id')
-                  ->constrained('categories');
-            $table->integer('etudiant_id');
-            $table->foreignId('etudiant_id')
-                  ->constrained('users');
-
-
+            $table->text('content');
+            $table->unsignedBigInteger('categories_id');
+            $table->foreign('categories_id')
+                  ->references('id')->on('categories');
+            $table->unsignedBigInteger('etudiant_id');
+            $table->foreign('etudiant_id')
+                  ->references('id')->on('users');
             $table->timestamps();
         });
     }

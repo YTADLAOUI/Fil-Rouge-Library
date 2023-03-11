@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Branche extends Model
 {
     use HasFactory;
+    protected $fillable=[
+        'nom',
+        'promo_id'
+    ];
 }
