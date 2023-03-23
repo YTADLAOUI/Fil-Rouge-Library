@@ -12,7 +12,7 @@ body {
   position: relative;
   background-color: #038dfe;
   /* overflow-x: hidden; */
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 100%;
 }
 .dlogo{
@@ -126,6 +126,6 @@ ul a {
   body{
     height: 1000px;
     background-position:53%;
-    /* overflow: scroll;  */
+    overflow: scroll; 
 }
 }
