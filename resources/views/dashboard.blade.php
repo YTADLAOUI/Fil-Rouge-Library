@@ -1,7 +1,7 @@
 @extends('layout')
 @section('contant')
  <x-app-layout>
-    <div class="py-12">
+    <div class="asortie py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="container-fluid">
@@ -53,7 +53,7 @@
                                 
                             </div>
                         </div>
-                        <div class="col py-2">
+                        <div class="cartContainer col py-2">
                             {{-- <div class="col-md-3 col-xl-3 col-sm-6 col-12 mb-2"> --}}
                             <div class="container">
                                 <!-- Minimal statistics section start -->
