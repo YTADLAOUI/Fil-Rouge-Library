@@ -128,28 +128,18 @@
                                               </tr>
                                             </thead>
                                             <tbody>
-                                                {{-- @php
-                                                $count = 1;
-                                                @endphp --}}
-                                            {{-- @foreach ($meals as $meal) --}}
+                                              
                                               <tr>
+                                                <td>1</td>
                                                 <td>test</td>
                                                 <td>test</td>
                                                 <td><img class="rounded" src="{{asset('/images/22.svg')}}" width="100" height="60"></td>
                                                 <td><span class="d-inline-block text-truncate" style="max-width: 150px;">test</span></td>
                                                 <td>test</td>
                                                 <td>test</td>
-                                                <td>test</td>
-                                                <td>test</td>
                                                 <td><a href="{{ url('edit') }}" class="text-decoration-none text-primary fw-bold">edit</a></td>
                                                 <td><a href="" class="text-decoration-none text-danger fw-bold">delete</a></td>
                                               </tr>
-                                              
-                                               
-                                              {{-- @php
-                                                $count ++;
-                                                @endphp --}}
-                                                {{-- @endforeach --}}
                                             </tbody>
                                         </table> 
                                         
