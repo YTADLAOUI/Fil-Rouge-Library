@@ -81,7 +81,7 @@
         <div class="citation"> 
             <span class="khir"><p>خير</p></span>
             <span class="jalis"><p>الجليس في الزمان</p></span>
-            <span class="ktab"><p>الكتاب</p></span>
+            <span  class="ktab"><p>الكتاب</p></span>
         </div>
     </div>
     <div  class="container-image">

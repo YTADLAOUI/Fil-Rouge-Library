@@ -1,48 +1,59 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+{{-- <x-guest-layout> --}}
+    {{-- <x-authentication-card> --}}
+        <link rel="stylesheet" href={{asset('style\login.css')}}>
+        {{-- <x-slot name="logo">
+            <img src="{{asset('/img/logo.png')}}" class="block h-9 w-auto" />
+        </x-slot> --}}
+    <section>
+            <x-validation-errors class="mb-4" />
 
-        <x-validation-errors class="mb-4" />
+            @if (session('status'))
+                <div class="mb-4 font-medium text-sm text-green-600">
+                    {{ session('status') }}
+                </div>
+            @endif
+        <div class="form-box">
+            <div class="form-value">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+                    <img src="{{asset('/img/logo.png')}}" class="block h-9 w-auto" />
+                        <div class="inputbox">
+                            <ion-icon name="mail-outline"></ion-icon>
+                            <x-label for="email"  />
+                            <x-input id="email" placeholder="Email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                        </div>
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
+                        <div class="inputbox">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                            <x-label for="password" value="" />
+                            <x-input id="password" placeholder="password" type="password" name="password" required autocomplete="current-password" />
+                        </div>
+                        <div class="forget">
+                            <div class="register">
+                                <label for="remember_me" class="flex items-center">
+                                    <x-checkbox id="remember_me" name="remember" />
+                                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                                </label>
+                            </div>
+                            <x-button class="ml-4 mb-2">
+                                {{ __('Log in') }}
+                            </x-button>
+                            <div class="forgot">
+                                @if (Route::has('password.request'))
+                                <a class="" href="{{ route('password.request') }} ">
+                                    {{ __('Forgot your password?') }}
+                                </a>
+                                @endif
+                            </div>
+                            
+                        </div>
+                    </form>
             </div>
-        @endif
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            </div>
-
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout>
+        </div>       
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+    {{-- </x-authentication-card> --}}
+{{-- </x-guest-layout> --}}
