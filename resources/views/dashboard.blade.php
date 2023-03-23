@@ -58,13 +58,13 @@
                             <div class="container">
                                 <!-- Minimal statistics section start -->
                                 <div class="row ">
-                                    <div class="col-12 mt-3 mb-1">
+                                    <div class="col-12 mt-3 mb-3">
                                     <h4 class="text-uppercase">Statistics</h4>
                                     </div>
                                 </div>
 
-                                <div class="row " style="width: 90%">
-                                    <div class="col-md-3 col-xl-3 col-sm-10 col-12 m-1">
+                                <div class="row justify-content-center" style="width: 90%">
+                                    <div class="col-md-3 col-xl-2 col-sm-10 col-12 me-3 ">
                                         <div class="card row">
                                             <div class="text-center">
                                                 <i class="bi bi-list-ul"></i>
@@ -73,7 +73,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-xl-3 col-sm-10 col-12 m-1">
+                                    <div class="col-md-3 col-xl-2 col-sm-10 col-12 me-3">
                                         <div class="card row">
                                             <div class="text-center">
                                                 <i class="bi bi-list-ul"></i>
@@ -82,7 +82,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-xl-3 col-sm-10 col-12 m-1">
+                                    <div class="col-md-3 col-xl-2 col-sm-10 col-12 me-3">
                                         <div class="card row">
                                             <div class="text-center">
                                                 <i class="bi bi-list-ul"></i>
@@ -91,7 +91,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-xl-3 col-sm-10 col-12 m-1">
+                                    <div class="col-md-3 col-xl-2 col-sm-10 col-12 m-1">
                                         <div class="card row">
                                             <div class="text-center">
                                                 <i class="bi bi-list-ul"></i>
