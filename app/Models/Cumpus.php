@@ -9,4 +9,7 @@ class Cumpus extends Model
 {
     use HasFactory;
     protected $fillable=['nom'];
+    public function promo(){
+    return $this->hasMany(Promo::class);
+    }
 }

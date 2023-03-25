@@ -30,7 +30,21 @@ class User extends Authenticatable
         'id_groupes',
         'id_role'
     ];
-
+   public function groupe(){
+    return $this->belongsTo(Groupe::class);
+   }
+   public function article(){
+    return $this->hasMany(Article::class);
+   }
+   public function livre(){
+    return $this->hasMany(Livre::class);
+   }
+   public function commentaire(){
+    return $this->hasMany(Commentaire::class);
+   }
+   public function role(){
+    return $this->belongsTo(Role::class);
+   }
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -12,4 +12,10 @@ class Branche extends Model
         'nom',
         'promo_id'
     ];
+public function promo(){
+    return $this->belongsTo(Promo::class);
+}
+public function groupe(){
+    return $this->hasMany(Groupe::class);
+}
 }

@@ -14,4 +14,5 @@ protected $fillable =[
     'categories_id',
     'etudiant_id'
 ];
+
 }
