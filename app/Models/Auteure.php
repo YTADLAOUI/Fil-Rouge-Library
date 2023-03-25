@@ -9,4 +9,7 @@ class Auteure extends Model
 {
     use HasFactory;
     protected $fillable=['nom'];
+    public function livre(){
+        return $this->hasMany(Livre::class);
+    }
 }
