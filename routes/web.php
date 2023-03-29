@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/login');
 });
-Route::get('/s', function () {
-    return view('addUser');
-});
+// Route::get('/s', function () {
+//     return view('addUser');
+// });
 Route::post('/register',[UserController::class,'create'])->name('addUsers');
 Route::middleware([
     'auth:sanctum',
@@ -29,4 +29,6 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/s', function () {
+        return view('addUser');});
 });

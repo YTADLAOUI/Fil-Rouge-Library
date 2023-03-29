@@ -18,13 +18,13 @@ class UserController extends Controller
         //     'password' => 'required'
         //     // 'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         // ])->validate();
-        dd($input);
+        //dd($input);
          User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
             'id_role'=>3,
-            'id_groupes'=>1
+            'groupes_id'=>1
         ]);
         return redirect('http://127.0.0.1:8000/s');
     }

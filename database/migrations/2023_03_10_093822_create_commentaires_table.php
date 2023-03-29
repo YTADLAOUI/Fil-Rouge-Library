@@ -21,11 +21,6 @@ return new class extends Migration
                   ->references('id')->on('livres')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');
-            $table->unsignedBigInteger('article_id');
-            $table->foreign('article_id')
-                  ->references('id')->on('articles')
-                  ->onUpdate('cascade')
-                  ->onDelete('cascade');
                   $table->unsignedBigInteger('etudiant_id');
             $table->foreign('etudiant_id')
             ->references('id')->on('users');

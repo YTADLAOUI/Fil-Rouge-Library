@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{B79B89CD-80AC-4AA1-9AD0-5C938247BA28}" Label="" LastModificationDate="1679957855" Name="Diagramme de classes_1" Objects="68" Symbols="31" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{B79B89CD-80AC-4AA1-9AD0-5C938247BA28}" Label="" LastModificationDate="1678369292" Name="Diagramme de classes_1" Objects="79" Symbols="42" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -1437,7 +1437,7 @@ Shadow=0</a:DisplayPreferences>
 <o:AssociationSymbol Id="o13">
 <a:CreationDate>1678359505</a:CreationDate>
 <a:ModificationDate>1678367529</a:ModificationDate>
-<a:Rect>((-5292,-563), (1189,7095))</a:Rect>
+<a:Rect>((-5329,-563), (1189,7095))</a:Rect>
 <a:ListOfPoints>((-3307,7095),(-3307,611),(1189,611))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1458,7 +1458,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o17">
 <a:CreationDate>1678359883</a:CreationDate>
 <a:ModificationDate>1678360183</a:ModificationDate>
-<a:Rect>((-13150,3200), (2042,12360))</a:Rect>
+<a:Rect>((-13150,3200), (2005,12360))</a:Rect>
 <a:ListOfPoints>((2005,3200),(2005,11186),(-13150,11186))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1479,7 +1479,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o19">
 <a:CreationDate>1678360258</a:CreationDate>
 <a:ModificationDate>1678360258</a:ModificationDate>
-<a:Rect>((3784,3039), (7608,13748))</a:Rect>
+<a:Rect>((3747,3039), (7645,13748))</a:Rect>
 <a:ListOfPoints>((5771,3039),(5771,13748))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>3592</a:ArrowStyle>
@@ -1521,7 +1521,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o25">
 <a:CreationDate>1678360483</a:CreationDate>
 <a:ModificationDate>1678360483</a:ModificationDate>
-<a:Rect>((-1425,26854), (2473,32389))</a:Rect>
+<a:Rect>((-1388,26854), (2436,32389))</a:Rect>
 <a:ListOfPoints>((599,26854),(599,32389))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1542,7 +1542,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o28">
 <a:CreationDate>1678360525</a:CreationDate>
 <a:ModificationDate>1678360525</a:ModificationDate>
-<a:Rect>((-23304,-8848), (-17959,10300))</a:Rect>
+<a:Rect>((-23341,-8848), (-17959,10300))</a:Rect>
 <a:ListOfPoints>((-17959,10300),(-21317,10300),(-21317,-8848))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1563,7 +1563,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o31">
 <a:CreationDate>1678360562</a:CreationDate>
 <a:ModificationDate>1678360562</a:ModificationDate>
-<a:Rect>((-22907,-24961), (-19534,-13799))</a:Rect>
+<a:Rect>((-23282,-24961), (-19534,-13799))</a:Rect>
 <a:ListOfPoints>((-21408,-13799),(-21408,-24961))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1626,7 +1626,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o39">
 <a:CreationDate>1678360611</a:CreationDate>
 <a:ModificationDate>1678369148</a:ModificationDate>
-<a:Rect>((3888,-12900), (7805,-5639))</a:Rect>
+<a:Rect>((3851,-12900), (7842,-5639))</a:Rect>
 <a:ListOfPoints>((5818,-5639),(5818,-7555),(5725,-7555),(5725,-12900))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1647,7 +1647,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o42">
 <a:CreationDate>1678360711</a:CreationDate>
 <a:ModificationDate>1678360909</a:ModificationDate>
-<a:Rect>((5635,-15895), (18785,9334))</a:Rect>
+<a:Rect>((5635,-15895), (18822,9334))</a:Rect>
 <a:ListOfPoints>((5635,-15895),(16798,-15895),(16798,9334))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1668,7 +1668,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o44">
 <a:CreationDate>1678360722</a:CreationDate>
 <a:ModificationDate>1678360722</a:ModificationDate>
-<a:Rect>((9084,-558), (16425,9606))</a:Rect>
+<a:Rect>((9084,-558), (16462,9606))</a:Rect>
 <a:ListOfPoints>((9084,-558),(14438,-558),(14438,9606))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1689,7 +1689,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o46">
 <a:CreationDate>1678360798</a:CreationDate>
 <a:ModificationDate>1678360805</a:ModificationDate>
-<a:Rect>((-15952,12152), (2096,15841))</a:Rect>
+<a:Rect>((-15989,12152), (2096,15841))</a:Rect>
 <a:ListOfPoints>((2096,15509),(-13965,15509),(-13965,12152))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1710,7 +1710,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o48">
 <a:CreationDate>1678360941</a:CreationDate>
 <a:ModificationDate>1678360941</a:ModificationDate>
-<a:Rect>((-6199,-21246), (21195,10693))</a:Rect>
+<a:Rect>((-6162,-21246), (21232,10693))</a:Rect>
 <a:ListOfPoints>((-6162,5979),(-6162,-21246),(20065,-21246),(20065,9519),(17433,9519))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1731,7 +1731,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o50">
 <a:CreationDate>1678361722</a:CreationDate>
 <a:ModificationDate>1678361722</a:ModificationDate>
-<a:Rect>((-13723,293), (-7864,7248))</a:Rect>
+<a:Rect>((-13760,293), (-7864,7248))</a:Rect>
 <a:ListOfPoints>((-11886,293),(-11886,7248),(-7864,7248))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1752,7 +1752,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o53">
 <a:CreationDate>1678361824</a:CreationDate>
 <a:ModificationDate>1678361824</a:ModificationDate>
-<a:Rect>((-17235,702), (-13411,9225))</a:Rect>
+<a:Rect>((-17272,702), (-13374,9225))</a:Rect>
 <a:ListOfPoints>((-15398,702),(-15398,9225))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -2700,10 +2700,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>association19</a:Code>
 <a:CreationDate>1678360562</a:CreationDate>
 <a:Creator>Youcode</a:Creator>
-<a:ModificationDate>1679957855</a:ModificationDate>
+<a:ModificationDate>1678361380</a:ModificationDate>
 <a:Modifier>Youcode</a:Modifier>
 <a:RoleAMultiplicity>1..*</a:RoleAMultiplicity>
-<a:RoleBMultiplicity>1</a:RoleBMultiplicity>
+<a:RoleBMultiplicity>1..*</a:RoleBMultiplicity>
 <a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,276={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
 {F6FFC71C-C472-4261-A710-B0BCC0BF4D58},roleAImplementationClass,6=&lt;None&gt;
 {C11C9F66-6453-43A2-8824-6654518CF65A},roleBImplementationClass,6=&lt;None&gt;

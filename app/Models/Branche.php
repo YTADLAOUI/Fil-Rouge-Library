@@ -15,7 +15,7 @@ class Branche extends Model
 public function promo(){
     return $this->belongsTo(Promo::class);
 }
-public function groupe(){
+public function groupes(){
     return $this->hasMany(Groupe::class);
 }
 }

@@ -9,9 +9,6 @@ class Promo extends Model
 {
     use HasFactory;
     protected $fillable = ['nom'];
-    public function cumpus(){
-        return $this->belongsToMany(Cumpus::class);
-    }
     
     public function branche(){
         return $this->hasMany(Branche::class);

@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_groupes');
-            $table->foreign('id_groupes')
+            $table->unsignedBigInteger('groupes_id');
+            $table->foreign('groupes_id')
             ->references('id')->on('groupes');
-            $table->unsignedBigInteger('id_role')->default(1);
-            $table->foreign('id_role')
+            $table->unsignedBigInteger('role_id')->default(1);
+            $table->foreign('role_id')
                   ->references('id')->on('roles')->default(1);
         });
     }

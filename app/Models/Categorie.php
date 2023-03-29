@@ -11,10 +11,7 @@ class Categorie extends Model
     protected $fillable = [
         'nom'
     ];
-    public function livre(){
+    public function livres(){
         return $this->hasMany(Livre::class);
-    }
-    public function article(){
-        return $this->hasMany(Article::class);
     }
 }
