@@ -106,6 +106,7 @@ class BranchController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Branche::destroy($id);
+        return redirect('/branch');
     }
 }
