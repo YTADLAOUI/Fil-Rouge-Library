@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\BranchController;
+use App\Http\Controllers\PromoController;
 use App\Http\Controllers\UserController;
+use App\Models\Branche;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,5 +33,10 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
     Route::get('/s', function () {
-        return view('addUser');});
+        return view('crud.addUser');});
+    Route::resource('/promo',PromoController::class);
+    Route::resource('/branch',BranchController::class);
+    Route::get('/class', function () {
+        return view('crud.class');});
+
 });
