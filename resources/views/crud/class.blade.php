@@ -12,28 +12,29 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
-                  <th scope="col">Image</th>
-                  <th scope="col">Autor</th>
-                  <th scope="col">Descriptio</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Category</th>
+                  <th scope="col">branch</th>
+                  <th scope="col">promo</th>
                   <th scope="col">Edit</th>
                   <th scope="col">Delete</th>
                 </tr>
               </thead>
               <tbody>
-                
-                <tr>
-                  <td>1</td>
-                  <td>test</td>
-                  <td>test</td>
-                  <td><img class="rounded" src="{{asset('/images/22.svg')}}" width="100" height="60"></td>
-                  <td><span class="d-inline-block text-truncate" style="max-width: 150px;">test</span></td>
-                  <td>test</td>
-                  <td>test</td>
-                  <td><a href="{{ url('edit') }}" class="text-decoration-none text-primary fw-bold">edit</a></td>
-                  <td><a href="" class="text-decoration-none text-danger fw-bold">delete</a></td>
-                </tr>
+                @foreach ($classes as $class)
+                    <tr>
+                      <td>1</td>
+                      <td>{{$class->nom}}</td>
+                      <td>{{$class->branche->nom}}</td>
+                      <td>{{$class->branche->promo->nom}}</td>
+                      <td><a href="{{ url('class/'.$class->id.'/edit') }}" class="text-decoration-none text-primary fw-bold">edit</a></td>
+                      <td>
+                        <form action={{"class/".$class->id}} method="POST">
+                          @method("DELETE")
+                          {!!@csrf_field()!!}
+                          <button type="submit" class="text-decoration-none text-danger fw-bold">delete</button>
+                        </form>
+                      </td>
+                    </tr>
+                @endforeach
               </tbody>
           </table> 
   </div>
@@ -47,21 +48,37 @@
 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body">
-<form>
-<div class="mb-3">
-  <label for="recipient-name" class="col-form-label">Recipient:</label>
-  <input type="text" class="form-control" id="recipient-name">
+<form action="class" method="POST">
+  @csrf
+<div class="form-floating mb-3 ">
+  <input type="text" class="form-control" name="nom" id="name" placeholder="name" required>
+  <label for="name">Name</label>
 </div>
-<div class="mb-3">
-  <label for="message-text" class="col-form-label">Message:</label>
-  <textarea class="form-control" id="message-text"></textarea>
+<div class="form-floating mb-3">
+  <select class="form-select" name="promo_id" id="validationCustom04" required>
+    <option selected disabled value="">Choose...</option>
+    @foreach($promos as $promo)
+    <option value="{{$promo->id}}">{{$promo->nom}}</option>
+    @endforeach
+  </select>  
+  <label for="validationCustom04" class="form-label">Promo</label>
 </div>
-</form>
+<div class="form-floating mb-3">
+  <select class="form-select" name="branche_id" id="validationCustom04" required>
+    <option selected disabled value="">Choose...</option>
+    @foreach($branches as $branch)
+    <option value="{{$branch->id}}">{{$branch->nom}}</option>
+    @endforeach
+  </select>  
+  <label for="validationCustom04" class="form-label">Promo</label>
 </div>
 <div class="modal-footer">
-<button  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-<button  class="btn btn-primary">Send message</button>
+  <button  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  <button type="submit" class="btn btn-primary">Send </button>
+  </div>
+</form>
 </div>
+
 </div>
 </div>
 </div>

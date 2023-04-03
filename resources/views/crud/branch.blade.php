@@ -25,11 +25,14 @@
                   <td>{{$branch->nom}}</td>
                   <td>{{$branch->promo->nom}}</td>
                   <td><a href="{{ url("branch/".$branch->id."/edit") }}" class="text-decoration-none text-primary fw-bold">edit</a></td>
-                  <td><form action={{"branch/".$branch->id}} method="POST">
+                  <td>
+                    <form action={{"branch/".$branch->id}} method="POST">
                     @method("DELETE")
                     {!!@csrf_field()!!}
-                    <button type="submit" class="text-decoration-none text-danger fw-bold">delete</button></td>
+                    <button type="submit" class="text-decoration-none text-danger fw-bold">delete</button>
                   </form>
+                  </td>
+                  
                 </tr>
                 @endforeach
                 

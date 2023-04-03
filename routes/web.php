@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\ClassController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\UserController;
 use App\Models\Branche;
@@ -36,7 +37,6 @@ Route::middleware([
         return view('crud.addUser');});
     Route::resource('/promo',PromoController::class);
     Route::resource('/branch',BranchController::class);
-    Route::get('/class', function () {
-        return view('crud.class');});
+    Route::resource('/class', ClassController::class);
 
 });
