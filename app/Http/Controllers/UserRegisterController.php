@@ -125,6 +125,7 @@ class UserRegisterController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user=User::destroy($id);
+        return redirect('/register');
     }
 }

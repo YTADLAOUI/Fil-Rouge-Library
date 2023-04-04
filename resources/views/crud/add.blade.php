@@ -43,7 +43,11 @@
                         @endif
                 </td>
                   <td><a href="{{ url('register/'.$user->id.'/edit') }}" class="text-decoration-none text-primary fw-bold">edit</a></td>
-                  <td><a href="" class="text-decoration-none text-danger fw-bold">delete</a></td>
+                  <td> <form action={{"register/".$user->id}} method="POST">
+                    @method("DELETE")
+                    {!!@csrf_field()!!}
+                    <button type="submit" class="text-decoration-none text-danger fw-bold">delete</button>
+                  </form>
                 </tr>
               @endforeach
               </tbody>
