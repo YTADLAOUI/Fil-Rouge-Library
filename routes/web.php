@@ -4,6 +4,7 @@ use App\Http\Controllers\BranchController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserRegisterController;
 use App\Models\Branche;
 use Illuminate\Support\Facades\Route;
 
@@ -21,10 +22,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/login');
 });
-// Route::get('/s', function () {
-//     return view('addUser');
-// });
-Route::post('/register',[UserController::class,'create'])->name('addUsers');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -33,10 +30,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('/s', function () {
-        return view('crud.addUser');});
     Route::resource('/promo',PromoController::class);
     Route::resource('/branch',BranchController::class);
     Route::resource('/class', ClassController::class);
-
+    Route::resource('/register',UserRegisterController::class);
 });

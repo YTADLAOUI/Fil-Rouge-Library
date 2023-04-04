@@ -27,15 +27,15 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'groupes_id',
-        'role_id'
+        'profile_photo_path',
+        'role_id',
+        'groupe_id'
+        
     ];
    public function groupe(){
     return $this->belongsTo(Groupe::class);
    }
-   public function article(){
-    return $this->hasMany(Article::class);
-   }
+   
    public function livre(){
     return $this->hasMany(Livre::class);
    }

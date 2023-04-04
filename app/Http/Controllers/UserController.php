@@ -23,9 +23,9 @@ class UserController extends Controller
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
-            'id_role'=>3,
-            'groupes_id'=>1
+            'id_role'=>$input['id_role'],
+            'groupes_id'=>inpu
         ]);
-        return redirect('http://127.0.0.1:8000/s');
+        // return redirect('http://127.0.0.1:8000/s');
     }
 }
