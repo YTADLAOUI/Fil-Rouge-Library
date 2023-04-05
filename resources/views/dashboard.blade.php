@@ -55,7 +55,7 @@
             </div>
             <div class="container pt-5 table-responsive">
 
-                    <table class="table table-responsive bg-white rounded me-5">
+                    <table class="table table-responsive rounded me-5">
                         <thead>
                           <tr>
                             <th scope="col">#</th>

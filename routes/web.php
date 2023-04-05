@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuteureController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\PromoController;
@@ -34,4 +35,5 @@ Route::middleware([
     Route::resource('/branch',BranchController::class);
     Route::resource('/class', ClassController::class);
     Route::resource('/register',UserRegisterController::class);
+    Route::resource('/auteur',AuteureController::class);
 });

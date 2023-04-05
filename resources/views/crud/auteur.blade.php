@@ -12,22 +12,18 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
-                  <th scope="col">branch</th>
-                  <th scope="col">promo</th>
                   <th scope="col">Edit</th>
                   <th scope="col">Delete</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach ($classes as $class)
+                @foreach ($auteurs as $key=>$auteur)
                     <tr>
-                      <td>1</td>
-                      <td>{{$class->nom}}</td>
-                      <td>{{$class->branche->nom}}</td>
-                      <td>{{$class->branche->promo->nom}}</td>
-                      <td><a href="{{ url('class/'.$class->id.'/edit') }}" class="text-decoration-none text-primary fw-bold">edit</a></td>
+                      <td>{{$key+1}}</td>
+                      <td>{{$auteur->nom}}</td> 
+                      <td><a href="{{ url('auteur/'.$auteur->id.'/edit') }}" class="text-decoration-none text-primary fw-bold">edit</a></td>
                       <td>
-                        <form action={{"class/".$class->id}} method="POST">
+                        <form action={{"auteur/".$auteur->id}} method="POST">
                           @method("DELETE")
                           {!!@csrf_field()!!}
                           <button type="submit" class="text-decoration-none text-danger fw-bold">delete</button>
@@ -38,39 +34,20 @@
               </tbody>
           </table> 
   </div>
-
 {{-- <-------modal----------> --}}
 <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
-<h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+<h1 class="modal-title fs-5" id="exampleModalLabel">New autor</h1>
 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body">
-<form action="class" method="POST">
+<form action="auteur" method="POST">
   @csrf
 <div class="form-floating mb-3 ">
   <input type="text" class="form-control" name="nom" id="name" placeholder="name" required>
   <label for="name">Name</label>
-</div>
-<div class="form-floating mb-3">
-  <select class="form-select" name="promo_id" id="validationCustom04" required>
-    <option selected disabled value="">Choose...</option>
-    @foreach($promos as $promo)
-    <option value="{{$promo->id}}">{{$promo->nom}}</option>
-    @endforeach
-  </select>  
-  <label for="validationCustom04" class="form-label">Promo</label>
-</div>
-<div class="form-floating mb-3">
-  <select class="form-select" name="branche_id" id="validationCustom04" required>
-    <option selected disabled value="">Choose...</option>
-    @foreach($branches as $branch)
-    <option value="{{$branch->id}}">{{$branch->nom}}</option>
-    @endforeach
-  </select>  
-  <label for="validationCustom04" class="form-label">Promo</label>
 </div>
 <div class="modal-footer">
   <button  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
