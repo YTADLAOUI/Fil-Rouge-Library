@@ -1,7 +1,7 @@
 @extends('layouts.principal')
 @section('content')
 <div class="row items-center me-0">
-  <h1 class="col fw-bold ms-3 mt-5">Class</h1>
+  <h1 class="col fw-bold ms-3 mt-5">auteur</h1>
   {{-- <button type="button" class="col-4 me-5 mt-5 btn btn-dark w-auto" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><b>+ </b> Add Product</button> --}}
   <button class="col-4 me-5 mt-5 btn btn-dark w-auto" href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal3"><b>+ </b> Add Product</button>
   </div>

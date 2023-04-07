@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AuteureController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\ClassController;
+use App\Http\Controllers\livreController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserRegisterController;
@@ -23,6 +25,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/login');
 });
+Route::get('/ddd', function () {
+    return view('welcom');
+});
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -36,4 +41,6 @@ Route::middleware([
     Route::resource('/class', ClassController::class);
     Route::resource('/register',UserRegisterController::class);
     Route::resource('/auteur',AuteureController::class);
+    Route::resource('/categorie',CategorieController::class);
+    Route::resource('/livre',livreController::class);
 });

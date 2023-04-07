@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -17,6 +18,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -35,15 +37,15 @@ class User extends Authenticatable
    public function groupe(){
     return $this->belongsTo(Groupe::class);
    }
-   
-   public function livre(){
-    return $this->hasMany(Livre::class);
-   }
    public function commentaire(){
     return $this->hasMany(Commentaire::class);
    }
    public function role(){
     return $this->belongsTo(Role::class);
+   }
+   
+   public function reservation(){
+    return $this->hasMany(Reservation::class);
    }
     /**
      * The attributes that should be hidden for serialization.

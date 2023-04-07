@@ -65,7 +65,7 @@ class AuteureController extends Controller
     public function edit($id)
     {
         $auteur=Auteure::find($id);
-
+        return view('crud.edit.editAuteur')->with('auteur',$auteur);
     }
 
     /**
@@ -77,7 +77,13 @@ class AuteureController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'nom' => 'required',
+        ]);
+        $auteur=Auteure::find($id);
+        $input=$request->nom;
+        $auteur->update($input);
+        return redirect('/auteur');
     }
 
     /**

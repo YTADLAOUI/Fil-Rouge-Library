@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Auteure;
-use App\Models\Branche;
-use App\Models\Promo;
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class BranchController extends Controller
+class CategorieController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +15,8 @@ class BranchController extends Controller
      */
     public function index()
     {
-        $branches=Branche::with('promo')->get();
-        $promos=Promo::all();
-        return view('crud.branch')->with(['branches' => $branches, 'promos' => $promos]);
+        $categories=Categorie::all();
+        return view('crud.categorie')->with('categories',$categories);
     }
 
     /**
@@ -42,15 +39,10 @@ class BranchController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nom' => 'required',
-            'promo_id'=>'required'
         ]);
-        
-        if($validator->fails()) {
-            return response()->json($validator->errors(), 400);
-        }
-            $input=$request->all();
-            Branche::create($input);
-            return redirect('/branch');
+       $categories= $request->all();
+       Categorie::create($categories);
+       return redirect('/categorie');
     }
 
     /**
@@ -72,9 +64,8 @@ class BranchController extends Controller
      */
     public function edit($id)
     {
-        $branch= Branche::find($id);
-        $promos=Promo::all();
-        return view('crud.edit.editBranch')->with(['branches'=>$branch,'promos'=>$promos]);
+        $categorie=Categorie::find($id);
+        return view('crud.edit.editCategorie')->with('categorie',$categorie);
     }
 
     /**
@@ -86,13 +77,10 @@ class BranchController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $validator = Validator::make($request->all(), [
-        'nom' => 'required',
-    ]);
-    $auteur=Branche::find($id);
+        $categorie=Categorie::find($id);
         $input=$request->all();
-        $auteur->update($input);
-        return redirect('/branch');
+        $categorie->update($input);
+        return redirect('/categorie');
     }
 
     /**
@@ -103,7 +91,7 @@ class BranchController extends Controller
      */
     public function destroy($id)
     {
-        Branche::destroy($id);
-        return redirect('/branch');
+        Categorie::destroy($id);
+        return redirect('/categorie');
     }
 }

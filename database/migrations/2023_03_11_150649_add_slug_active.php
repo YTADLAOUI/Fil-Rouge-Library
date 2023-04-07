@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')
                   ->references('id')->on('roles');
+             $table->softDeletes();
         });
     }
 

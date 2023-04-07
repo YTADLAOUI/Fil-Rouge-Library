@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Branche extends Model
 {
     use HasFactory;
+    use SoftDeletes;
     protected $fillable=[
         'nom',
         'promo_id'

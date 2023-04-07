@@ -17,18 +17,16 @@ return new class extends Migration
             $table->id();
             $table->string('titre');
             $table->dateTime('datePublication');
-            $table->text('resume');
-            $table->integer('quantite');
+            $table->integer('quantite_total');
+            $table->integer('quantite_calcul');
             $table->unsignedBigInteger('categories_id');
             $table->foreign('categories_id')
                   ->references('id')->on('categories');
             $table->unsignedBigInteger('auteure_id');
             $table->foreign('auteure_id')
                   ->references('id')->on('auteures');
-            $table->unsignedBigInteger('admin_id');
-            $table->foreign('admin_id')
-                  ->references('id')->on('users');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

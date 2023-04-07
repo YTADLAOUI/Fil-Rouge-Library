@@ -24,6 +24,17 @@
                                         <a href="#" class="nav-link px-0 align-middle text-light">
                                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
                                     </li>
+                                    <li class="sidenav-item">
+                                        <a class="sidenav-link"><i class="fas fa-grin fa-fw me-3"></i><span>Category 1</span></a>
+                                        <ul class="sidenav-collapse show">
+                                          <li class="sidenav-item">
+                                            <a class="sidenav-link">Link 2</a>
+                                          </li>
+                                          <li class="sidenav-item">
+                                            <a class="sidenav-link">Link 3</a>
+                                          </li>
+                                        </ul>
+                                      </li>
                                     <hr>
                                     <hr>
                                     <li>

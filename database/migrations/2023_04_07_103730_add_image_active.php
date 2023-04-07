@@ -13,14 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('groupes', function (Blueprint $table) {
-            $table->id();
-            $table->string('nom');
-            $table->unsignedBigInteger('branche_id');
-            $table->foreign('branche_id')
-            ->references('id')->on('branches');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('livres', function (Blueprint $table) {
+            $table->string('image')->nullable();
         });
     }
 
@@ -31,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('groupes');
+        Schema::table('livres', function (Blueprint $table) {
+            //
+        });
     }
 };
