@@ -40,29 +40,31 @@
   </div>
 {{-- <-------modal----------> --}}
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content">
-<div class="modal-header">
-<h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter Promo </h1>
-<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-</div>
-<div class="modal-body">
-<form method="POST" action="promo">
-  @csrf
-  <div class="form-floating mb-3 ">
-    
-    <input type="text" class="form-control" name="nom" id="name" placeholder="name" required>
-    <label for="name">Name</label>
-    <div class="mt-2"><p>ex:1ere année</p></div>
-  </div>
-  <div class="modal-footer">
-    <button  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-primary">Save</button>
-  </div>
-</form>
-</div>
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter Promo </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  </button>
+          </div>
+        <div class="modal-body">
+          <form method="POST" action="promo">
+            @csrf
+            <div class="form-floating mb-3 ">
+              
+              <input type="text" class="form-control" name="nom" id="name" placeholder="name" required>
+              <label for="name">Name</label>
+              <div class="mt-2"><p>ex:1ere année</p></div>
+            </div>
+            <div class="modal-footer">
+              <button  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
 
-</div>
+      </div>
+  </div>
 </div>
 {{-- ------------------------------------------------------------ --}}
 
