@@ -78,8 +78,7 @@
                             </li>
                         </ul>
                         <hr>
-                                @endif
-                                
+                                @endif   
                             </div>
                         </div>
                         <div class=" @if(Auth::user()->role_id ==1) cartContainer @else cartContainer0 @endif col py-2">

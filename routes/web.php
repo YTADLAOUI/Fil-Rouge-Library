@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuteureController;
+use App\Http\Controllers\BibliController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\ClassController;
@@ -26,7 +27,7 @@ Route::get('/', function () {
     return redirect('/login');
 });
 Route::get('/ddd', function () {
-    return view('welcom');
+    return view('bibliotique');
 });
 Route::middleware([
     'auth:sanctum',
@@ -43,4 +44,5 @@ Route::middleware([
     Route::resource('/auteur',AuteureController::class);
     Route::resource('/categorie',CategorieController::class);
     Route::resource('/livre',livreController::class);
+    Route::resource('/bibli',BibliController::class);
 });
