@@ -9,6 +9,7 @@ use App\Http\Controllers\livreController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserRegisterController;
+use App\Http\Livewire\BiblioLivewire;
 use App\Models\Branche;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/login');
 });
+Route::get('biblio', [BiblioLivewire::class, 'render']);
 Route::get('/ddd', function () {
     return view('bibliotique');
 });
@@ -44,5 +46,6 @@ Route::middleware([
     Route::resource('/auteur',AuteureController::class);
     Route::resource('/categorie',CategorieController::class);
     Route::resource('/livre',livreController::class);
-    Route::resource('/bibli',BibliController::class);
+     Route::resource('/bibli',BibliController::class);
+    
 });
