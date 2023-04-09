@@ -6,11 +6,9 @@ use App\Models\Livre;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class BiblioLivewire extends Component
+class LivreLivewire extends Component
 {
-    
     use WithPagination;
-
     public $search = '';
  
     public function updatingSearch()
@@ -18,9 +16,8 @@ class BiblioLivewire extends Component
         $this->resetPage();
     }
     public function render()
-    { 
-
+    {
         $livres= Livre::where('titre', 'like', '%'.$this->search.'%')->paginate(5);
-        return view('livewire.biblio-livewire')->with("livres",$livres);
+        return view('livewire.livre-livewire')->with("livres",$livres);
     }
 }

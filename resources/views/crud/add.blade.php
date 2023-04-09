@@ -2,57 +2,16 @@
 @section('content')
 <div class="row items-center me-0">
   <h1 class="col fw-bold ms-3 mt-5">Your Users</h1>
-  <button class="col-4 me-5 mt-5 btn btn-dark w-auto" href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal"><b>+ </b> Add user</button>
+  <button class="col-4 me-5 mt-5 btn btn-dark w-auto mb-3" href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal"><b>+ </b> Add user</button>
   </div>
   <div class="d-flex justify-content-center">
   @if($errors->any())
-  <div class="alert alert-danger">
-    {{'error d\'enrgestrement check votre model pour connaître l\'error'}}
-  </div>      
+        <div class="alert alert-danger">
+          {{'error d\'enrgestrement check votre model pour connaître l\'error'}}
+        </div>      
   @endif 
-</div>
-  <div class="container pt-5 table-responsive">
-          <table class="table table-responsive bg-white rounded me-5">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">image</th>
-                  <th scope="col">name</th>
-                  <th scope="col">email</th>
-                  <th scope="col">role</th>
-                  <th scope="col">class</th>
-                  <th scope="col">Edit</th>
-                  <th scope="col">Delete</th>
-                 
-                </tr>
-              </thead>
-              <tbody>
-              @foreach ($users as $key=>$user)
-                <tr>
-                  <td>{{$key+1}}</td>
-                  <td><img class="rounded" src="{{asset("images/".$user->profile_photo_path)}}" width="50" height="60"></td>
-                  <td>{{$user->name}}</td>
-                  <td>{{$user->email}}</td>
-                  <td>{{$user->role->nom}}</td>
-                  <td>
-                        @if ($user->groupe==null)
-                        ____
-                        @else
-                        {{$user->groupe->nom}}
-                        @endif
-                </td>
-                  <td><a href="{{ url('register/'.$user->id.'/edit') }}" class="text-decoration-none text-primary fw-bold">edit</a></td>
-                  <td> <form action={{"register/".$user->id}} method="POST">
-                    @method("DELETE")
-                    {!!@csrf_field()!!}
-                    <button type="submit" class="text-decoration-none text-danger fw-bold">delete</button>
-                  </form>
-                </tr>
-              @endforeach
-              </tbody>
-          </table> 
   </div>
-
+ @livewire('register-livewire')
 {{-- <-------modal----------> --}}
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

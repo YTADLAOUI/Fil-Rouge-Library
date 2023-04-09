@@ -14,46 +14,7 @@
         </ul>
     </div>
 @endif
-  <div class="container pt-5 table-responsive">
-
-          <table class="table table-responsive rounded me-5">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">image</th>
-                  <th scope="col">Titre</th>
-                  <th scope="col">Date de pub</th>
-                  <th scope="col">Quantite</th>
-                  <th scope="col">Categorie</th>
-                  <th scope="col">Auteur</th>
-                  <th scope="col">Edit</th>
-                  <th scope="col">Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach ($livres as $key=>$livre)
-                    <tr>
-                      <td>{{$key+1}}</td>
-                  <td><img class="rounded" src="{{asset("images/".$livre->image)}}" width="50" height="60"></td>
-                      <td>{{$livre->titre}}</td>
-                      <td>{{$livre->datePublication}}</td>
-                      <td>{{$livre->quantite_total}}</td>
-                      <td>{{$livre->categories->nom}}</td>
-                      <td>{{$livre->auteurs->nom}}</td>
-                      <td><a href="{{ url('livre/'.$livre->id.'/edit') }}" class="text-decoration-none text-primary fw-bold">edit</a></td>
-                      <td>
-                        <form action={{"livre/".$livre->id}} method="POST">
-                          @method("DELETE")
-                          {!!@csrf_field()!!}
-                          <button type="submit" class="text-decoration-none text-danger fw-bold">delete</button>
-                        </form>
-                      </td>
-                    </tr>
-                @endforeach
-              </tbody>
-          </table> 
-  </div>
-
+@livewire('livre-livewire')
 {{-- <-------modal----------> --}}
 <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
