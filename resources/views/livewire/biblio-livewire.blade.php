@@ -1,6 +1,16 @@
 <div>
     {{-- The Master doesn't talk, he acts. --}}
     <section class="row w-100 ">
+      @if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+    @elseif(session('success'))
+    <div class="alert alert-success">
+      {{ session('success') }}
+  </div>
+        
+    @endif
         <div class="container items-center">
           <input class="mx-auto form-control form-control-borderless shadow me-1 mb-2" wire:model="search" type="search" placeholder="Search here" style="width: 48.3%">
         </div>
@@ -36,9 +46,11 @@
                   <div class="d-flex justify-content-between mt-3">
                       <div>
                         @if( $livre->quantite_calcul>=1)
-                          <form action="">
-                            <button  class="btn btn-primary" >réserver</button>
+                          <form action="{{url('reservation/'.$livre->id)}}" method="POST">
+                            @csrf
+                            <button type="submit"  class="btn btn-primary" >réserver</button>
                           </form>
+                          {{-- <a href="{{route('test.reservation',$livre->id)}}" class="text-light">hhhhhh</a> --}}
                         @endif
                       </div>
                       <div class="d-flex justify-content-center">
