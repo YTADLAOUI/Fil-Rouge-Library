@@ -62,6 +62,9 @@
             </div>
         </div>
         @endforeach  
+        <div class="container text-dark">
+          {{$livres->links()}}
+      </div>
       </section>
       @livewireScripts
 </div>

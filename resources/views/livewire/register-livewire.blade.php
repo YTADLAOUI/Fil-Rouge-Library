@@ -43,6 +43,9 @@
             @endforeach
             </tbody>
         </table> 
+        <div class="container text-dark">
+          {{$users->links()}}
+      </div>
 </div>
 </div>
 @livewireScripts

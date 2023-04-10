@@ -40,6 +40,9 @@
               @endforeach
             </tbody>
         </table> 
+        <div class="container text-dark">
+          {{$livres->links()}}
+      </div>
 </div>
 </div>
 @livewireScripts

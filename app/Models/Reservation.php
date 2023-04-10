@@ -19,7 +19,7 @@ class Reservation extends Model
     'livre_id'
 ];
 public function users(){
-    return $this->belongsTo(User::class);
+    return $this->belongsTo(User::class,'etudiant_id');
 }
 public function livres(){
     return $this->belongsTo(Livre::class,'livre_id');

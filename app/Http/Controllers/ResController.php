@@ -19,6 +19,11 @@ class ResController extends Controller
                 // dd($reservation);
         return view('reservationPersonelle')->with('reservations',$reservation);
     }
+    public function toutReservation(){
+        $reservations=Reservation::with('users','livres.categories')->get();
+        // dd($reservations);
+        return view('toutReservation')->with('reservations',$reservations);
+    }
     
     public function reservation($id){
         $livre = Livre::find($id);

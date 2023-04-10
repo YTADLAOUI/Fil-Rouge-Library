@@ -50,5 +50,6 @@ Route::middleware([
     Route::post('reservation/{id}',[ResController::class,'reservation']);
     Route::get('personelResrvation',[ResController::class,'index']);
     Route::delete('reservation/{id}',[ResController::class,'destroy']);
+    Route::get('/reservationTotal',[ResController::class,'toutReservation']);
 });
 // Route::get('reservation/{$id}',[ReservationController::class,'resrevation'])->name('test.reservation');
