@@ -5,15 +5,15 @@
   <button class="col-4 me-5 mt-5 btn btn-dark w-auto" href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal3"><b>+ </b> Add Product</button>
   </div>
   <div class="container pt-5 table-responsive">
-          @if ($errors->any())
-              <div class="alert alert-danger">
-                  <ul>
-                      @foreach ($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                      @endforeach
-                  </ul>
-              </div>
+        @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+        @elseif(session('success'))
+        <div class="alert alert-success">
+          {{ session('success') }}
           @endif
+      </div>
           <table class="table table-responsive rounded me-5">
               <thead>
                 <tr>

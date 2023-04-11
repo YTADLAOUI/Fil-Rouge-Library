@@ -41,14 +41,14 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::resource('/promo',PromoController::class);
-    Route::resource('/branch',BranchController::class);
-    Route::resource('/class', ClassController::class);
-    Route::resource('/register',UserRegisterController::class);
-    Route::resource('/auteur',AuteureController::class);
-    Route::resource('/categorie',CategorieController::class);
-    Route::resource('/livre',livreController::class);
-    Route::resource('/bibli',BibliController::class);
+    Route::resource('/promo',PromoController::class)->except('create','show');
+    Route::resource('/branch',BranchController::class)->except('create','show');
+    Route::resource('/class', ClassController::class)->except('create','show');
+    Route::resource('/register',UserRegisterController::class)->except('create','show');
+    Route::resource('/auteur',AuteureController::class)->except('create','show');
+    Route::resource('/categorie',CategorieController::class)->except('create','show');
+    Route::resource('/livre',livreController::class)->except('create','show');
+    Route::resource('/bibli',BibliController::class)->only('index','show');
     Route::post('reservation/{id}',[ResController::class,'reservation']);
     Route::get('personelResrvation',[ResController::class,'index']);
     Route::delete('reservation/{id}',[ResController::class,'destroy']);

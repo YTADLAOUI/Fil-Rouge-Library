@@ -46,11 +46,11 @@ class BranchController extends Controller
         ]);
         
         if($validator->fails()) {
-            return response()->json($validator->errors(), 400);
+            redirect('/branch')->with('error', 'branch ne son pas effectuée');
         }
             $input=$request->all();
             Branche::create($input);
-            return redirect('/branch');
+            return redirect('/branch')->with('success', 'branch effectuée avec succès.');
     }
 
     /**
@@ -89,10 +89,13 @@ class BranchController extends Controller
       $validator = Validator::make($request->all(), [
         'nom' => 'required',
     ]);
-    $auteur=Branche::find($id);
+    if($validator->fails()) {
+        redirect('/branch')->with('error', 'branch ne son pas update');
+    }
+        $auteur=Branche::find($id);
         $input=$request->all();
         $auteur->update($input);
-        return redirect('/branch');
+        return redirect('/branch')->with('success', 'branch update avec succès.');
     }
 
     /**
@@ -104,6 +107,6 @@ class BranchController extends Controller
     public function destroy($id)
     {
         Branche::destroy($id);
-        return redirect('/branch');
+        return redirect('/branch')->with('success', 'branch delete avec succès.');
     }
 }

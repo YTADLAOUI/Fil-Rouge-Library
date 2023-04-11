@@ -40,9 +40,12 @@ class AuteureController extends Controller
        $validator = Validator::make($request->all(), [
             'nom' => 'required',
         ]);
+        if($validator->fails()) {
+            redirect('/auteur')->with('error', 'auteur ne son pas effectuée');
+        }
        $auteur= $request->all();
        Auteure::create($auteur);
-       return redirect('/auteur');
+       return redirect('/auteur')->with('success', 'auteur effectuée avec succès.');;
     }
 
     /**
@@ -80,10 +83,13 @@ class AuteureController extends Controller
         $validator = Validator::make($request->all(), [
             'nom' => 'required',
         ]);
+        if($validator->fails()) {
+            redirect('/auteur')->with('error', 'auteur ne son pas update');
+        }
         $auteur=Auteure::find($id);
         $input=$request->nom;
         $auteur->update($input);
-        return redirect('/auteur');
+        return redirect('/auteur')->with('success', 'auteur update avec succès.');
     }
 
     /**
@@ -95,6 +101,6 @@ class AuteureController extends Controller
     public function destroy($id)
     {
         Auteure::destroy($id);
-        return redirect('/auteur');
+        return redirect('/auteur')->with('success', 'auteur delete avec succès.');
     }
 }

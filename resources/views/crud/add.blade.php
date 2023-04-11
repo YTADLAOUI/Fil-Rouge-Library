@@ -5,6 +5,11 @@
   <button class="col-4 me-5 mt-5 btn btn-dark w-auto mb-3" href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal"><b>+ </b> Add user</button>
   </div>
   <div class="d-flex justify-content-center">
+    @if(session('success'))
+    <div class="alert alert-success">
+      {{ session('success') }}
+      @endif
+  </div>
   @if($errors->any())
         <div class="alert alert-danger">
           {{'error d\'enrgestrement check votre model pour connaître l\'error'}}

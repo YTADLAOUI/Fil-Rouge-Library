@@ -40,9 +40,12 @@ class CategorieController extends Controller
         $validator = Validator::make($request->all(), [
             'nom' => 'required',
         ]);
+        if($validator->fails()) {
+            redirect('/categorie')->with('error', 'Categorie ne son pas effectuée');
+        }
        $categories= $request->all();
        Categorie::create($categories);
-       return redirect('/categorie');
+       return redirect('/categorie')->with('success', 'Categorie effectuée avec succès.');
     }
 
     /**
@@ -64,6 +67,7 @@ class CategorieController extends Controller
      */
     public function edit($id)
     {
+        
         $categorie=Categorie::find($id);
         return view('crud.edit.editCategorie')->with('categorie',$categorie);
     }
@@ -77,10 +81,17 @@ class CategorieController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $validator = Validator::make($request->all(), [
+            'nom' => 'required',
+        ]);
+        if($validator->fails()) {
+            redirect('/categorie')->with('error', 'Categorie ne son pas update');
+        }
         $categorie=Categorie::find($id);
         $input=$request->all();
         $categorie->update($input);
-        return redirect('/categorie');
+        return redirect('/categorie')->with('success', 'Categorie update avec succès.');;
     }
 
     /**
@@ -92,6 +103,6 @@ class CategorieController extends Controller
     public function destroy($id)
     {
         Categorie::destroy($id);
-        return redirect('/categorie');
+        return redirect('/categorie')->with('success', 'Categorie delete avec succès.');;
     }
 }

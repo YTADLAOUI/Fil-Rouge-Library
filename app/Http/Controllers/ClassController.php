@@ -49,11 +49,11 @@ class ClassController extends Controller
         ]);
         
         if($validator->fails()) {
-            return response()->json($validator->errors(), 400);
+            redirect('/class')->with('error', 'Class ne son pas effectuée');
         }
         $input=$request->all();
         Groupe::create($input);
-        return redirect('/class');
+        return redirect('/class')->with('success', 'Class effectuée avec succès.');
     }
 
     /**
@@ -97,7 +97,7 @@ class ClassController extends Controller
         ]);
         
         if($validator->fails()) {
-            return response()->json($validator->errors(), 400);
+            redirect('/class')->with('error', 'Class ne son pas Update');
         }
         $class=Groupe::find($id);
         if(!$class){
@@ -105,7 +105,7 @@ class ClassController extends Controller
         }
         $input=$request->all();
         $class->update($input);
-        return redirect('/class');
+        return redirect('/class')->with('success', 'Class Update avec succès.');;
     }
 
     /**
@@ -117,6 +117,6 @@ class ClassController extends Controller
     public function destroy($id)
     {
         Groupe::destroy($id);
-        return redirect('/class');
+        return redirect('/class')->with('success', 'Class Delete avec succès.');;
     }
 }

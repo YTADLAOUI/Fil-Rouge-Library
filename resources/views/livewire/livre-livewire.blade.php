@@ -4,11 +4,16 @@
         <input class="mx-auto form-control form-control-borderless shadow me-1 mb-2" wire:model="search" type="search" placeholder="Search here" style="width: 48.3%">
       </div>
     <div class="container pt-5 table-responsive">
-      @if (session('error'))
+      @if ($errors->any())
       <div class="alert alert-danger">
-          {{ session('error') }}
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
       </div>
-      @elseif(session('success'))
+  @endif
+      @if(session('success'))
       <div class="alert alert-success">
         {{ session('success') }}
         @endif
