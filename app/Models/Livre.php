@@ -26,7 +26,7 @@ class Livre extends Model
         return $this->belongsTo(Categorie::class,'categories_id');
     }
     public function commentaires(){
-        return $this->hasMany(Commentaire::class,'livre_id');
+        return $this->hasMany(Commentaire::class,'id');
     }
     public function auteurs(){
         return $this->belongsTo(Auteure::class,'auteure_id');

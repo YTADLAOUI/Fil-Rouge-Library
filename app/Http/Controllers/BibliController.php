@@ -47,7 +47,9 @@ class BibliController extends Controller
      */
     public function show($id)
     {
-        //
+      $livre=Livre::with('categories','auteurs','commentaires.users')->find($id);
+    //   dd($livre);
+      return view('comment')->with('livre',$livre);
     }
 
     /**

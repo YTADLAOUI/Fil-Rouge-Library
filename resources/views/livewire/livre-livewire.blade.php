@@ -4,6 +4,15 @@
         <input class="mx-auto form-control form-control-borderless shadow me-1 mb-2" wire:model="search" type="search" placeholder="Search here" style="width: 48.3%">
       </div>
     <div class="container pt-5 table-responsive">
+      @if (session('error'))
+      <div class="alert alert-danger">
+          {{ session('error') }}
+      </div>
+      @elseif(session('success'))
+      <div class="alert alert-success">
+        {{ session('success') }}
+        @endif
+    </div>
         <table class="table table-responsive rounded me-5">
             <thead>
               <tr>
@@ -40,7 +49,7 @@
               @endforeach
             </tbody>
         </table> 
-        <div class="container text-dark">
+        <div class="container text-dark mt-2">
           {{$livres->links()}}
       </div>
 </div>

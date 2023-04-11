@@ -29,7 +29,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/login');
 });
-// Route::get('biblio', [BiblioLivewire::class, 'render']);
+ Route::get('comment', function () {
+    return view('comment');
+});
 
 Route::middleware([
     'auth:sanctum',

@@ -19,6 +19,6 @@ public function livres(){
     return $this->belongsTo(Livre::class);
 }
 public function users(){
-    return $this->belongsTo(User::class);
+    return $this->belongsTo(User::class,'etudiant_id');
 }
 }

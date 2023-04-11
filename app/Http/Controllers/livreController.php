@@ -55,7 +55,7 @@ class livreController extends Controller
         }
         Livre::create($data);
     
-        return redirect('/livre');
+        return redirect('/livre')->with('success', 'Livre effectuée avec succès.');
     }
 
     /**
@@ -108,7 +108,7 @@ class livreController extends Controller
         }
         $livre->update($data);
     
-        return redirect('/livre');
+        return redirect('/livre')->with('success', 'Livre Update avec succès.');
     }
         
     
@@ -123,6 +123,6 @@ class livreController extends Controller
     {
         Livre::destroy($id);
         
-        return redirect('/livre');
+        return redirect('/livre')->with('success', 'Livre delete avec succès.');
     }
 }

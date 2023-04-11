@@ -22,7 +22,7 @@ class ResController extends Controller
     public function toutReservation(){
         $reservations=Reservation::with('users','livres.categories')->get();
         // dd($reservations);
-        return view('toutReservation')->with('reservations',$reservations);
+        return view('dashboard')->with('reservations',$reservations);
     }
     
     public function reservation($id){

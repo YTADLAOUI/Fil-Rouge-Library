@@ -50,7 +50,7 @@
               @endforeach
             </tbody>
         </table> 
-        <div class="container text-dark">
+        <div class="container text-dark mt-2">
             {{$reservations->links()}}
         </div>
 </div>

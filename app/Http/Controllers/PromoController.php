@@ -42,11 +42,11 @@ class PromoController extends Controller
         ]);
         
         if($validator->fails()) {
-            return response()->json($validator->errors(), 400);
+            return  redirect('/promo')->with('error', 'promo ne son pas effectuée');
         }
         $input=$request->all();
         Promo::create($input);
-        return redirect('/promo');
+        return redirect('/promo')->with('success', 'Promo effectuée avec succès.');
     }
 
     /**
@@ -69,6 +69,9 @@ class PromoController extends Controller
     public function edit($id)
     {
         $promo=Promo::find($id);
+        if(!$promo){
+            return response()->json(['promo_not_found'], 404);
+        }
         return view('crud.edit.editPromo')->with('promo',$promo);
     }
 
@@ -86,7 +89,7 @@ class PromoController extends Controller
         ]);
         
         if($validator->fails()) {
-            return response()->json($validator->errors(), 400);
+            return redirect('/promo')->with('error', 'Promo ne son pas Update');
         }
         $promo=Promo::find($id);
         if(!$promo){
@@ -94,7 +97,7 @@ class PromoController extends Controller
         }
         $input=$request->all();
         $promo->update($input);
-        return redirect('/promo');
+        return redirect('/promo')->with('promo', 'Réservation effectuée avec succès.');
     }
 
     /**
@@ -110,6 +113,6 @@ class PromoController extends Controller
         // if(!(Promo::destroy($id))){
         //     return response()->json(['plant_not_found'], 404);
         // }
-        return redirect('/promo');
+        return redirect('/promo')->with('success', 'delete avec succès.');
     }
 }

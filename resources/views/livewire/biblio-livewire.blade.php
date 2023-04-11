@@ -54,7 +54,7 @@
                         @endif
                       </div>
                       <div class="d-flex justify-content-center">
-                        <button type="" class="btn btn-info"><i class="bi bi-eye me-1"></i>show</button>
+                       <a href={{url("bibli/".$livre->id)}}> <button  type="" class="btn btn-info"><i class="bi bi-eye me-1"></i>show</button></a>
                       </div> 
                   </div> 
                 </div>
@@ -62,7 +62,7 @@
             </div>
         </div>
         @endforeach  
-        <div class="container text-dark">
+        <div class="container text-dark mt-2">
           {{$livres->links()}}
       </div>
       </section>
