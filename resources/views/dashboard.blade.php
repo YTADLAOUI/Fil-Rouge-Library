@@ -48,13 +48,10 @@
         </div>
         <!-- // Minimal statistics section end -->
         <div class="row items-center me-0">
-            <h1 class="col fw-bold ms-3 mt-5">Your products</h1>
-            {{-- <button type="button" class="col-4 me-5 mt-5 btn btn-dark w-auto" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><b>+ </b> Add Product</button> --}}
+          <h1 class="col fw-bold ms-3 mt-5">All Reservation</h1>
+        </div>
             @livewire('tout-reservation')
-    {{-- <-------modal----------> --}}
-    
-
-
+    {{-- ------------------------------------------------------------- --}}
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -63,23 +60,70 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
-          @csrf
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button  class="btn btn-primary">Send message</button>
+           <form id="formstatus" method="POST" class="">
+            @csrf
+            @method("PATCH")
+             <div class="form-floating mb-3 ">
+              <select  class="form-select" name="status" id="opt" required>
+                <option disabled selected id="opt" ></option>
+                <option value="en attendant">En attendant</option>
+                <option value="valide">Valide</option>
+                <option value="emprunt">Emprunt</option>
+                <option value="return">Return</option>
+              </select> 
+              <label for="opt">Status*</label>
+            </div> 
+            <div class="form-floating mb-3 ">
+              <input type="date" id="emprunt" class="form-control" name="dateEmprunt" placeholder="datePublication" >
+              <label for="emprunt">DateDeEmprunt</label>
+            </div>
+            <div class="form-floating mb-3 ">
+              <input type="date" class="form-control" name="datePreuveReturn" id="Preuve" placeholder="datePreuveReturn" >
+              <label for="Preuve">DatePreuveDeReteur</label>
+            </div>
+            <div class="form-floating mb-3 ">
+              <input type="date" class="form-control" name="dateDeReturn" id="Return" placeholder="datePreuveReturn" >
+              <label for="Return">dateDeReturn</label>
+            </div>
+            <div class="d-flex justify-content-center"> 
+              <button  class="btn btn-secondary me-3">return</button>
+              <button type="submit" class="btn btn-warning ">Update</button>
+            </div>
+        </form> 
       </div>
     </div>
   </div>
+  <script>
+    function idrecupere(e){
+  var id= e.target.parentElement.parentElement.querySelector('input').value;
+    
+
+  var url = `{{url('update/${id}')}}`;
+  document.querySelector('#formstatus').setAttribute('action', url);
+  // Send Ajax request
+  $.ajax({
+    url:"{{route('status.get')}}",
+    type: 'POST',
+    data: {
+      // Pass the id as data to the server
+      id: id,
+      _token: "{{ csrf_token() }}"
+    },
+    success: function(response) {
+      // Handle successful response
+      // console.log(response.data); // You can do whatever you want with the response data here
+      console.log(document.querySelector('#opt')); 
+      document.querySelector('#opt').value=response.data.status;
+      document.querySelector('#emprunt').value=response.data.dateEmprunt;
+      document.querySelector('#Preuve').value=response.data.datePreuveReturn;
+      document.querySelector('#Return').value=response.data.dateDeReturn;
+    },
+    error: function(xhr, status, error) {
+      // Handle error response
+      console.error(error); // You can handle the error response here
+    }
+  });
+}
+  </script>
 </div>
 @endsection

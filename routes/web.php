@@ -5,10 +5,13 @@ use App\Http\Controllers\BibliController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\ClassController;
+use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\livreController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\ResController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\StatusController;
+use App\Http\Controllers\UpdateStatus;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserRegisterController;
 use App\Http\Livewire\BiblioLivewire;
@@ -29,9 +32,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/login');
 });
- Route::get('comment', function () {
-    return view('comment');
-});
+//  Route::get('comment', function () {
+//     return view('comment');
+// });
 
 Route::middleware([
     'auth:sanctum',
@@ -53,5 +56,13 @@ Route::middleware([
     Route::get('personelResrvation',[ResController::class,'index']);
     Route::delete('reservation/{id}',[ResController::class,'destroy']);
     Route::get('/reservationTotal',[ResController::class,'toutReservation']);
+    Route::patch('update/{id}',[UpdateStatus::class,'update']);
+    Route::post('/status/edits',[StatusController::class,'edit'])->name('status.get');
 });
 // Route::get('reservation/{$id}',[ReservationController::class,'resrevation'])->name('test.reservation');
+
+// Route::controller(CommentaireController::class)->group(function(){
+// Route::post('/blog-single/{id}/comments','store');
+// Route::get('/blog-single/{id}/comments','index');
+
+// });

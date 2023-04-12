@@ -3,21 +3,9 @@
 <div class="row items-center me-0">
   <h1 class="col fw-bold ms-3 mt-5">Your Users</h1>
   <button class="col-4 me-5 mt-5 btn btn-dark w-auto mb-3" href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal"><b>+ </b> Add user</button>
-  </div>
-  <div class="d-flex justify-content-center">
-    @if(session('success'))
-    <div class="alert alert-success">
-      {{ session('success') }}
-      @endif
-  </div>
-  @if($errors->any())
-        <div class="alert alert-danger">
-          {{'error d\'enrgestrement check votre model pour connaître l\'error'}}
-        </div>      
-  @endif 
-  </div>
- @livewire('register-livewire')
-{{-- <-------modal----------> --}}
+</div>
+                  @livewire('register-livewire')
+                          {{-- <-------modal----------> --}}
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -113,6 +101,6 @@
         </div>
     </div>
 </div>
-</div>
+
 
 @endsection

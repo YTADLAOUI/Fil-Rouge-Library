@@ -13,6 +13,7 @@ class Reservation extends Model
     protected $fillable = [
     'dateReservation',
     'dateEmprunt',
+    'status',
     'datePreuveReturn',
     'dateDeReturn',
     'etudiant_id',

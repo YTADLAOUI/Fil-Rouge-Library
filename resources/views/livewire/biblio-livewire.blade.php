@@ -19,7 +19,7 @@
             <div class="card mt-3 " style="width: 18rem; ">
                         <div style="background-image:url({{"images/".$livre->image}}); background-position: center;
                         background-size: cover;
-                            height:200px" >
+                            height:30rem" >
                              @if($livre->quantite_calcul>=1)    
                              <div class='badge bg-success'><h1>disponible</h1> </div> 
                              @else

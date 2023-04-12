@@ -4,7 +4,21 @@
         <input class="mx-auto form-control form-control-borderless shadow me-1 mb-2" wire:model="search" type="search" placeholder="Search here" style="width: 48.3%">
       </div>
     <div class="container pt-5 table-responsive">
-        <table class="table table-responsive bg-white rounded me-5">
+      @if ($errors->any())
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div>
+  @endif
+      @if(session('success'))
+      <div class="alert alert-success">
+        {{ session('success') }}
+        @endif
+    </div>
+      <table class="table table-responsive rounded me-5">
             <thead>
               <tr>
                 <th scope="col">#</th>

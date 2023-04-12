@@ -3,22 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Commentaire;
-use App\Models\Livre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
-class BibliController extends Controller
+class CommentaireController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $livres=Livre::with('auteurs','commentaires','categories')->get();
-        return view('biblio',compact('livres'));
+        $commentaires = Commentaire::where('livre_id',$id)->get();
+        return redirect('bibli/'.$id)->with('commentaires',$commentaires);
     }
 
     /**
@@ -39,9 +38,22 @@ class BibliController extends Controller
      */
     public function store(Request $request)
     {
-        
-        
-        // return redirect('bibli/'.$request->id);
+        if(Auth::check()){
+            $validator = Validator::make($request->all(), [
+                
+                'content'=>'required'
+            ]);
+            if($validator->fails()) {
+                redirect('bibli/'.$request->id)->with('error', 'commntaire ne son pas effectuée');}
+            Commentaire::create([
+                'etudiant_id'=>Auth::user()->id,
+                'livre_id'=>$request->id,
+                'content'=>$request->comment
+            ]);   
+
+        }else{
+            return redirect('/login');
+        }
     }
 
     /**
@@ -52,10 +64,7 @@ class BibliController extends Controller
      */
     public function show($id)
     {
-      $livre=Livre::with('categories','auteurs')->find($id);
-      $commentaires = Commentaire::where('livre_id',$id)->with('users')->get();
-    //   dd($commentaires);
-      return view('comment')->with(['livre'=>$livre,"commentaires"=>$commentaires]);
+        //
     }
 
     /**
