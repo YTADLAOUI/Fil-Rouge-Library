@@ -18,42 +18,50 @@
                                     <hr>
                                     <li>
                                         <a href="bibli" class="nav-link px-0 align-middle text-light">
-                                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Biblio</span></a>
                                     </li>
                                     <li>
                                         <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-light">
                                             <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Youcode</span> </a>
                                             <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                                             <li class="w-100">
-                                                <a href="promo" class="nav-link px-0"> <span class="d-none d-sm-inline text-light">Promo</span> </a>
+                                                <a href="promo" class="nav-link px-0 text-light"><i class="fs-5 bi-calendar-plus"></i> <span class="ms-1 d-none d-sm-inline">Promo</span> </a>
                                             </li>
                                             <li class="w-100">
-                                                <a href="branch" class="nav-link px-0"> <span class="d-none d-sm-inline text-light">Branch</span> </a>
+                                                <a href="branch" class="nav-link px-0 text-light"><i class="fs-5 bi-file-zip-fill"></i><span class="ms-1 d-none d-sm-inline">Branch</span> </a>
                                             </li>
                                             <li class="w-100">
-                                                <a href="class" class="nav-link px-0"> <span class="d-none d-sm-inline text-light">Class</span> </a>
+                                                <a href="class" class="nav-link px-0 text-light"><i class="fs-5 bi-signpost-split"></i>
+                                                    <span class="ms-1 d-none d-sm-inline">Class</span> </a>
                                             </li>
                                         </ul>
                                       </li>
                                     <hr>
                                     <li>
                                         <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-light">
-                                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Livre</span> </a>
+                                            <i class="fs-4 bi-journal"></i></i><span class="ms-1 d-none d-sm-inline">Livre</span> </a>
                                             <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                                             <li class="w-100">
-                                                <a href="auteur" class="nav-link px-0"> <span class="d-none d-sm-inline text-light">auteur</span> </a>
+                                                <a href="auteur" class="nav-link px-0 text-light"> <i class="bi bi-person"></i> <span class="ms-1 d-none d-sm-inline">auteur</span> </a>
                                             </li>
                                             <li class="w-100">
-                                                <a href="categorie" class="nav-link px-0"> <span class="d-none d-sm-inline text-light">categorie</span> </a>
+                                                <a href="categorie" class="nav-link px-0 text-light"><i class="fs-5 bi-app-indicator"></i> <span class="ms-1 d-none d-sm-inline">categorie</span> </a>
                                             </li>
                                         </ul>
                                       </li>
                                     <hr>
-                                    <li>
-                                        <a href="{{ url('livre') }}" class="nav-link px-0 align-middle text-light">
-                                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">All Products</span> </a>
-                                    </li>
-                                    <hr>
+                                    <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-light">
+                                        <i class="fs-4 bi-book-half"></i><span class="ms-1 d-none d-sm-inline">Les Livres</span> </a>
+                                        <ul class="collapse nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
+                                        <li class="w-100">
+                                            <a href="reservationTotal" class="nav-link px-0 text-light"> <i class="fs-5 bi-files"></i><span class="ms-1 d-none d-sm-inline">Tout les livres</span> </a>
+                                        </li>
+                                        <li class="w-100">
+                                            <a href="personelResrvation" class="nav-link px-0 text-light"> <i class="fs-5 bi-file"></i><span class="ms-1 d-none d-sm-inline">Votre Livre</span> </a>
+                                        </li>
+                                    </ul>
+                                  </li>
+                                <hr>
                                     <li>
                                         <a href="register" class="nav-link px-0 align-middle text-light">
                                             <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Users</span> </a>
@@ -72,19 +80,10 @@
                                 </li>
                             <hr>
                             <li>
-                                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-light">
-                                    <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
-                            </li>
-                            <hr>
-                            <li>
                                 <a href="{{ url('/livre') }}" class="nav-link px-0 align-middle text-light">
                                     <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">All Products</span> </a>
                             </li>
                             <hr>
-                            <li>
-                                <a href="#" class="nav-link px-0 align-middle text-light">
-                                    <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                            </li>
                         </ul>
                         <hr>
                                 @endif   

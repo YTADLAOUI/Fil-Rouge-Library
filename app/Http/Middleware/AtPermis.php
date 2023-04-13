@@ -3,11 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Middleware\CheckUserRole as MyCheckUserRole;
 
-class CheckUseraaa extends Middleware
+class AtPermis
 {
     public function handle($request, Closure $next)
     {
@@ -17,12 +16,12 @@ class CheckUseraaa extends Middleware
             $user = Auth::user();
 
             // Check the role value in the User model
-            if ($user->role == 1) {
+            if ($user->role_id == 1) {
                 // User is an admin, allow access
                 return $next($request);
             } else {
                 // User is not an admin, redirect or show error
-                return redirect()->route('unauthorized'); // You can customize this to your needs
+                return redirect('/bibli'); // You can customize this to your needs
             }
         }
 
@@ -30,4 +29,3 @@ class CheckUseraaa extends Middleware
         return redirect()->route('login');
     }
 }
-

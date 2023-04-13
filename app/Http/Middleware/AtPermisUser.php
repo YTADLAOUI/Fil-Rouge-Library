@@ -3,12 +3,18 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Middleware\CheckUserRole as MyCheckUserRole;
 
-class CheckUseraaa extends Middleware
+class AtPermisUser
 {
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     */
     public function handle($request, Closure $next)
     {
         // Check if user is authenticated
@@ -17,7 +23,7 @@ class CheckUseraaa extends Middleware
             $user = Auth::user();
 
             // Check the role value in the User model
-            if ($user->role == 1) {
+            if ($user->role_id == 2) {
                 // User is an admin, allow access
                 return $next($request);
             } else {
@@ -30,4 +36,3 @@ class CheckUseraaa extends Middleware
         return redirect()->route('login');
     }
 }
-

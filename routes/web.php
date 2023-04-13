@@ -32,14 +32,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/login');
 });
-//  Route::get('comment', function () {
-//     return view('comment');
-// });
+ Route::get('comment', function () {
+    return view('comment');
+});
 
 Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
+    'verified','admin'
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -59,6 +57,15 @@ Route::middleware([
     Route::patch('update/{id}',[UpdateStatus::class,'update']);
     Route::post('/status/edits',[StatusController::class,'edit'])->name('status.get');
 });
+Route::middleware([
+    'verified'
+])->group(function (){
+    Route::resource('/bibli',BibliController::class)->only('index','show');
+    Route::get('personelResrvation',[ResController::class,'index']);
+    Route::delete('reservation/{id}',[ResController::class,'destroy']);
+});
+
+
 // Route::get('reservation/{$id}',[ReservationController::class,'resrevation'])->name('test.reservation');
 
 // Route::controller(CommentaireController::class)->group(function(){

@@ -42,7 +42,7 @@
                     <td>{{$reservation->dateDeReturn}}</td>
                     <td>{{$reservation->livres->quantite_calcul}}</td>
                     <td>{{$reservation->livres->categories->nom}}</td>
-                    <td>{{$reservation->status}}</td>
+                    <td class="text-danger" >{{$reservation->status}}</td>
                     <td><button href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal" id="edit"  class="text-decoration-none text-primary fw-bold" onclick="idrecupere(event)">edit</button></td>
                     <td>
                       <form action={{"reservationsTotal/".$reservation->id}} method="POST">
