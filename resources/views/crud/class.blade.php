@@ -1,11 +1,11 @@
 @extends('layouts.principal')
 @section('content')
+<div>
 <div class="row items-center me-0">
   <h1 class="col fw-bold ms-3 mt-5">Class</h1>
   <button class="col-4 me-5 mt-5 btn btn-dark w-auto" href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal3"><b>+ </b> Add Product</button>
   </div>
-  <div class="container pt-5 table-responsive">
-        @if (session('error'))
+  @if (session('error'))
         <div class="alert alert-danger">
             {{ session('error') }}
         </div>
@@ -14,7 +14,8 @@
           {{ session('success') }}
           @endif
       </div>
-          <table class="table table-responsive rounded me-5">
+  <div class="container pt-5 table-responsive">
+          <table class="table bg-white rounded me-5">
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -86,6 +87,7 @@
 </form>
 </div>
 
+</div>
 </div>
 </div>
 </div>

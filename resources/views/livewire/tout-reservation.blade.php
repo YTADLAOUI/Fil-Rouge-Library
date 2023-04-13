@@ -4,12 +4,12 @@
         <input class=" form-control form-control-borderless shadow mt-4 me-sm-5 mb-2" wire:model="search" type="search" placeholder="Search here" style="width:43%">
     </div>
     <div class="container pt-5 table-responsive">
-        <table class="table rounded me-5">
+        <table class="table bg-white rounded me-5">
             <thead>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">imgUser</th>
-                <th scope="col">Nom</th>
+                <th scope="col">NomDeUser</th>
                 <th scope="col">TitreDeLivre</th>
                 <th scope="col">DateDeReservation</th>
                 <th scope="col">DateDeEmprunt</th>
