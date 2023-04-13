@@ -1,8 +1,8 @@
 <div>
     {{-- Be like water. --}}
-    <div class="container items-center">
-        <input class="mx-auto form-control form-control-borderless shadow me-1 mb-2" wire:model="search" type="search" placeholder="Search here" style="width: 48.3%">
-      </div>
+    <div class="container items-center d-flex justify-content-center justify-content-sm-end ">
+      <input class=" form-control form-control-borderless shadow mt-4 me-sm-5 mb-2" wire:model="search" type="search" placeholder="Search here" style="width:43%">
+  </div>
     <div class="container pt-5 table-responsive">
       @if ($errors->any())
       <div class="alert alert-danger">
