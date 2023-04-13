@@ -33,12 +33,6 @@
                                             <li class="w-100">
                                                 <a href="class" class="nav-link px-0"> <span class="d-none d-sm-inline text-light">Class</span> </a>
                                             </li>
-                                            <li class="w-100">
-                                                <a href="auteur" class="nav-link px-0"> <span class="d-none d-sm-inline text-light">auteur</span> </a>
-                                            </li>
-                                            <li class="w-100">
-                                                <a href="categorie" class="nav-link px-0"> <span class="d-none d-sm-inline text-light">categorie</span> </a>
-                                            </li>
                                         </ul>
                                       </li>
                                     <hr>
@@ -62,7 +56,7 @@
                                     <hr>
                                     <li>
                                         <a href="register" class="nav-link px-0 align-middle text-light">
-                                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">register</span> </a>
+                                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Users</span> </a>
                                     </li>
                                 </ul>
                                 <hr>

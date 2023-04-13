@@ -15,10 +15,8 @@ class StatusController extends Controller
      */
     public function edit(Request $request)
     {   
-        
         $id=$request->id;
         $reservation=Reservation::find($id);
         return response()->json(['message'=>'success','data'=>$reservation]);
-
     }
 }

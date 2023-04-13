@@ -33,6 +33,8 @@ class ResController extends Controller
         if($reservationExistante){
             return redirect('bibli/')->with('error', 'Vous avez déjà réservé ce livre en attente.');
         }else{
+           $reserve= $livre->quantite_calcul-1;
+           $livre->update(['quantite_calcul'=>$reserve]);
             Reservation::create([
                 'dateReservation' => date('Y-m-d'),
                 'etudiant_id' => Auth::user()->id,
