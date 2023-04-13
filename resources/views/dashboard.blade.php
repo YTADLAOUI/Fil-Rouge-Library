@@ -64,12 +64,12 @@
             @csrf
             @method("PATCH")
              <div class="form-floating mb-3 ">
-              <select  class="form-select" name="status" id="opt" required>
+              <select class="form-select" name="status" id="opt" required>
                 <option disabled selected id="opt" ></option>
                 <option value="en attendant">En attendant</option>
                 <option value="valide">Valide</option>
                 <option value="emprunt">Emprunt</option>
-                <option value="return">Return</option>
+                <option  value="return">Return</option>
               </select> 
               <label for="opt">Status*</label>
             </div> 
@@ -94,10 +94,11 @@
     </div>
   </div>
   <script>
-    function idrecupere(e){
-  var id= e.target.parentElement.parentElement.querySelector('input').value;
-    
 
+    
+    function idrecupere(e){
+    
+   var id= e.target.parentElement.parentElement.querySelector('input').value;
   var url = `{{url('update/${id}')}}`;
   document.querySelector('#formstatus').setAttribute('action', url);
   // Send Ajax request
@@ -112,7 +113,7 @@
     success: function(response) {
       // Handle successful response
       // console.log(response.data); // You can do whatever you want with the response data here
-      console.log(document.querySelector('#opt')); 
+      // console.log(document.querySelector('#opt')); 
       document.querySelector('#opt').value=response.data.status;
       document.querySelector('#emprunt').value=response.data.dateEmprunt;
       document.querySelector('#Preuve').value=response.data.datePreuveReturn;
@@ -122,8 +123,11 @@
       // Handle error response
       console.error(error); // You can handle the error response here
     }
+
   });
 }
+// document.querySelector()
+
   </script>
 </div>
 @endsection

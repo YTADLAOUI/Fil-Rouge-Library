@@ -14,6 +14,7 @@ class ResController extends Controller
         $userId=Auth::user()->id;
         // dd($userId);
          $reservation = Reservation::where('etudiant_id', $userId)
+                ->where('deleted_at',NULL)
                 ->with('livres.categories','livres.auteurs')
                 ->get();
                 // dd($reservation);
