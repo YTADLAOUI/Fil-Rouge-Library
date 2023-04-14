@@ -11,9 +11,10 @@
   </div>
         
     @endif
-    <div class="container items-center d-flex justify-content-center justify-content-sm-end ">
-      <input class=" form-control form-control-borderless shadow mt-4 me-sm-5 mb-2" wire:model="search" type="search" placeholder="Search here" style="width:43%">
-  </div>
+    <div class="container items-center col-12 col-sm-6 justify-content-sm-end  w-sm-50">
+      <input class=" form-control form-control-borderless shadow mt-4 me-sm-5 mb-2" wire:model="search" type="search" placeholder="Search ">
+    </div>
+      <div class="col-sm-6"></div>
         @foreach ($livres as $livre)
         <diV class="d-flex justify-content-center col-md-4 me-0">
             <div class="card mt-3 " style="width: 18rem; ">

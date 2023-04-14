@@ -1,6 +1,7 @@
 @extends('layouts.principal')
 @section('content')
      <!-- // Minimal statistics section end -->
+  <div class="border p-3 rounded m-3">
      <div class="row items-center me-0">
       <h1 class="col fw-bold ms-3 mt-5">Your Livre</h1>
       </div>
@@ -40,4 +41,5 @@
                   </tbody>
               </table> 
       </div>
+    </div>
 @endsection

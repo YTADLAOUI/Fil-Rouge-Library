@@ -1,9 +1,10 @@
 <div>
     {{-- Stop trying to control. --}}
-    <div class="container items-center d-flex justify-content-center justify-content-sm-end ">
-        <input class=" form-control form-control-borderless shadow mt-4 me-sm-5 mb-2" wire:model="search" type="search" placeholder="Search here" style="width:43%">
+    <div class="container col-9 col-sm-3 ">
+      <input class=" form-control form-control-borderless shadow mt-4 me-sm-5 mb-2" wire:model="search" type="search" placeholder="Search here">
     </div>
-    <div class="container pt-5 table-responsive">
+      <div class="col-sm-7"></div>
+    <div class="container  pt-5 table-responsive">
         <table class="table bg-light rounded me-5">
             <thead>
               <tr>

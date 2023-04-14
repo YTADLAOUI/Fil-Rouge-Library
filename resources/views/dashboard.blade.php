@@ -1,6 +1,6 @@
 @extends('layouts.principal')
 @section('content')
-          <div class="container">
+          <div class="container ">
             <!-- Minimal statistics section start -->
             <div class="row ">
                 <div class="col-12 mt-3 mb-3">

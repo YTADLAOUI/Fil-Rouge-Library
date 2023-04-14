@@ -1,7 +1,7 @@
 @extends('layouts.principal')
 @section('content')
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container border p-3 rounded ">
+<div class="border p-3 rounded col-10">
 
   <div class="col-12 mb-3">
       <p class=" me-2"><b>Ajouter une commentaire</b></p>

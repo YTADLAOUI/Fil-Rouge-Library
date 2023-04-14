@@ -11,5 +11,13 @@ admin.addEventListener('click',function(){
   console.log(document.querySelector('#videinput').value= null)
 });
 
+function show(id){
+
+    document.querySelector("#commentaire-"+id).setAttribute('class', 'd-none');
+    document.querySelector("#input-"+id).value = document.querySelector("#commentaire-"+id).innerHTML
+    document.querySelector("#form-"+id).setAttribute('class', 'd-block');
+    // console.log(document.querySelector("#cmt-input-"+cmtID).value)
+
+}
 
 

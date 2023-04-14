@@ -18,7 +18,7 @@
     @endif
 </div>
     <div class="container pt-5 table-responsive">
-      <table class="table  bg-white rounded me-5">
+      <table class="table table-striped  bg-white rounded me-5">
             <thead>
               <tr>
                 <th scope="col">#</th>
