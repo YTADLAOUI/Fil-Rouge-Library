@@ -1,4 +1,4 @@
-<p align="center">YouBiblio</a></p>
+<p align="center"><b>YouBiblio</b></a></p>
 
 ## Présentation de Projet
 
