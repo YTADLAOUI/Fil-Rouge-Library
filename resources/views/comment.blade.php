@@ -34,24 +34,9 @@
             <b>Auteur: {{$livre->auteurs->nom}}</b>
           </p>
         </div>
-        <hr class="my-3">
-        <div class="container ">
-            <form class="row" wire:submit.prevent="sendText">
-                <input wire:model="commentText" type="text" class="col form-control" placeholder="your comment" />
-                <button  class="col-2 ms-2 btn btn-light bg-light" type="submit"><i class="bi bi-send text-dark"></i></button>
-            </form>
-        </div>  
-        <div class="container bg-light mt-3">
-            <div class="d-flex justify-content-center py-2">
-                <div class="second py-2 px-2"> <div><img src="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1nfGVufDB8fDB8fA%3D%3D&w=1000&q=80" width="18" height="18"><span class="text2">Beth</span></div>
-                    <div class=" py-1 pt-2">
-                        <span class="text1">Type your note, and hit enter to add it</span> 
-                        <div><span class="text3 text3o">edit</span><span class="thumbup"></span>
-                            <span class="text4 text4i">delete</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       {{-- comments --}}
+       @livewire('commentaire', ['LivreId' => $livre->id])
+       {{-- end comments --}}
       </div>
     </div>
 </div>

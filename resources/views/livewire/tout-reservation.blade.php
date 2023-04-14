@@ -28,21 +28,22 @@
                   dd($reservation);
               @endphp --}}
              
-                  <tr>
+                  <tr >
                     <input type="hidden" name="" id='hiddenput{{$key}}' value="{{$reservation->id}}">
                     <td>{{$key+1}}</td>
                 <td><img class="rounded" src="{{asset("images/".$reservation->users->profile_photo_path)}}" width="50" height="60"></td>
-                    <td>{{$reservation->users->name}}</td>
-                    <td>{{$reservation->livres->titre}}</td>
-                    <td>{{$reservation->dateReservation}}</td>
-                    <td>
+                    <td class="text-center">{{$reservation->users->name}}</td>
+                    <td class="text-center">{{$reservation->livres->titre}}</td>
+                    <td class="text-center">{{$reservation->dateReservation}}</td>
+                    <td class="text-center">
                       {{$reservation->dateEmprunt}}
                     </td>
-                    <td>{{$reservation->datePreuveReturn}}</td>
-                    <td>{{$reservation->dateDeReturn}}</td>
-                    <td>{{$reservation->livres->quantite_calcul}}</td>
-                    <td>{{$reservation->livres->categories->nom}}</td>
-                    <td  class="d-flex justify-content-center @if($reservation->status=='en attendant') badge bg-primary text-light @elseif($reservation->status=='valide') badge bg-success text-light @elseif($reservation->status=='emprunt') badge bg-danger text-light @else badge bg-info text-dark @endif ">{{$reservation->status}}</td>
+                    <td class="text-center">{{$reservation->datePreuveReturn}}</td>
+                    <td class="text-center">{{$reservation->dateDeReturn}}</td>
+                    <td class="text-center">{{$reservation->livres->quantite_calcul}}</td>
+                    <td class="text-center">{{$reservation->livres->categories->nom}}</td>
+                    <td style="padding: 12px;
+                    margin-top: 10PX;" class="d-flex justify-content-center @if($reservation->status=='en attendant') badge bg-primary text-light @elseif($reservation->status=='valide') badge bg-success text-light @elseif($reservation->status=='emprunt') badge bg-danger text-light @else badge bg-info text-dark @endif ">{{$reservation->status}}</td>
                     <td><button href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal" id="edit"  class="text-decoration-none text-primary fw-bold" onclick="idrecupere(event)">edit</button></td>
                     <td>
                       <form action={{"reservationsTotal/".$reservation->id}} method="POST">
