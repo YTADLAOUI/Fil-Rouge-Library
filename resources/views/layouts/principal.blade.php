@@ -17,7 +17,7 @@
                                     </li>
                                     <hr>
                                     <li>
-                                        <a href="bibli" class="nav-link px-0 align-middle text-light">
+                                        <a href="{{url('/bibli')}}" class="nav-link px-0 align-middle text-light">
                                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Biblio</span></a>
                                     </li>
                                     <li>

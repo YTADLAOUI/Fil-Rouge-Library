@@ -54,7 +54,7 @@ class BibliController extends Controller
     {
       $livre=Livre::with('categories','auteurs')->find($id);
       $commentaires = Commentaire::where('livre_id',$id)->with('users')->get();
-    //   dd($commentaires);
+    //    dd($commentaires);
       return view('comment')->with(['livre'=>$livre,"commentaires"=>$commentaires]);
     }
 

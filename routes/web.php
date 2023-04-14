@@ -64,7 +64,7 @@ Route::middleware([
     Route::get('personelResrvation',[ResController::class,'index']);
     Route::delete('reservation/{id}',[ResController::class,'destroy']);
 });
-
+Route::get('/bibli/{id}',[BibliController::class,'show']);
 
 // Route::get('reservation/{$id}',[ReservationController::class,'resrevation'])->name('test.reservation');
 

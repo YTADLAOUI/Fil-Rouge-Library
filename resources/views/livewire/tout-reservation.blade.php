@@ -4,7 +4,7 @@
         <input class=" form-control form-control-borderless shadow mt-4 me-sm-5 mb-2" wire:model="search" type="search" placeholder="Search here" style="width:43%">
     </div>
     <div class="container pt-5 table-responsive">
-        <table class="table bg-white rounded me-5">
+        <table class="table bg-light rounded me-5">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -42,7 +42,7 @@
                     <td>{{$reservation->dateDeReturn}}</td>
                     <td>{{$reservation->livres->quantite_calcul}}</td>
                     <td>{{$reservation->livres->categories->nom}}</td>
-                    <td class="text-danger" >{{$reservation->status}}</td>
+                    <td  class="d-flex justify-content-center @if($reservation->status=='en attendant') badge bg-primary text-light @elseif($reservation->status=='valide') badge bg-success text-light @elseif($reservation->status=='emprunt') badge bg-danger text-light @else badge bg-info text-dark @endif ">{{$reservation->status}}</td>
                     <td><button href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal" id="edit"  class="text-decoration-none text-primary fw-bold" onclick="idrecupere(event)">edit</button></td>
                     <td>
                       <form action={{"reservationsTotal/".$reservation->id}} method="POST">
