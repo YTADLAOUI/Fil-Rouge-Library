@@ -1,9 +1,9 @@
 <div>
     {{-- Stop trying to control. --}}
-    <div class="container col-9 col-sm-3 ">
-      <input class=" form-control form-control-borderless shadow mt-4 me-sm-5 mb-2" wire:model="search" type="search" placeholder="Search here">
+    <div class="col-9 col-sm-5 form-outline mb-4">
+      <input id="search-focus" class=" form-control form-control-borderless shadow mt-4 mb-2  rounded-pill" wire:model="search" type="search" placeholder="recherche par NomDeUser">
     </div>
-      <div class="col-sm-7"></div>
+      {{-- <div class="col-sm-7"></div> --}}
     <div class="container  pt-5 table-responsive">
         <table class="table bg-light rounded me-5">
             <thead>
