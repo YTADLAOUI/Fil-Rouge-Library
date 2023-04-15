@@ -45,12 +45,12 @@
                     <td class="text-center">{{$reservation->livres->categories->nom}}</td>
                     <td style="padding: 12px;
                     margin-top: 10PX;" class="d-flex justify-content-center @if($reservation->status=='en attendant') badge bg-primary text-light @elseif($reservation->status=='valide') badge bg-success text-light @elseif($reservation->status=='emprunt') badge bg-danger text-light @else badge bg-info text-dark @endif ">{{$reservation->status}}</td>
-                    <td><button href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal" id="edit"  class="text-decoration-none text-primary fw-bold" onclick="idrecupere(event)">edit</button></td>
-                    <td>
+                    <td class="text-center"><button href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal" id="edit"  class="text-decoration-none text-primary fw-bold" onclick="idrecupere(event)"><i class="fs-5 bi-pencil-square"></i></button></td>
+                    <td class="text-center">
                       <form action={{"reservationsTotal/".$reservation->id}} method="POST">
                         @method("DELETE")
                         {!!@csrf_field()!!}
-                        <button type="submit" class="text-decoration-none text-danger fw-bold">delete</button>
+                        <button type="submit" class="text-decoration-none text-danger fw-bold"><i class="fs-5 bi-trash3"></i></button>
                       </form>
                     </td>
                   </tr>

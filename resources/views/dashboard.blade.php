@@ -47,8 +47,8 @@
                 </div>
         </div>
         <!-- // Minimal statistics section end -->
-        <div class="row items-center me-0">
-          <h1 class="col fw-bold ms-3 mt-5">All Reservation</h1>
+        <div class="row col-12 mt-5 mb-3">
+          <h4 class="text-uppercase">tout les Reservations</h4>
         </div>
             @livewire('tout-reservation')
     {{-- ------------------------------------------------------------- --}}
@@ -56,7 +56,9 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          suivre l'etat de livre
+          </h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -87,7 +89,7 @@
             </div>
             <div class="d-flex justify-content-center"> 
               <button  class="btn btn-secondary me-3">return</button>
-              <button type="submit" class="btn btn-warning ">Update</button>
+              <button type="submit" class="btn btn-warning bg-warning text-light">Update</button>
             </div>
         </form> 
       </div>
