@@ -5,15 +5,17 @@
   <h1 class="col fw-bold ms-3 mt-5">Branch</h1>
   <button class="col-4 me-5 mt-5 btn btn-dark w-auto" href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal2"><b>+ </b> Add Product</button>
   </div>
-  @if (session('error'))
-  <div class="alert alert-danger">
-      {{ session('error') }}
-  </div>
-  @elseif(session('success'))
-  <div class="alert alert-success">
-    {{ session('success') }}
-    @endif
-  </div>
+    <div class="mt-3">
+      @if (session('error'))
+      <div class="alert alert-danger">
+          {{ session('error') }}
+      </div>
+      @elseif(session('success'))
+      <div class="alert alert-success">
+        {{ session('success') }}
+        @endif
+      </div>
+    </div>
   <div class="container pt-5 table-responsive">
           <table class="table bg-white rounded me-5">
               <thead>
@@ -76,7 +78,7 @@
   </div>
   <div class="modal-footer">
     <button  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-primary">Send</button>
+    <button type="submit" class="btn btn-primary bg-primary">save</button>
   </div>
 </form>
 </div>

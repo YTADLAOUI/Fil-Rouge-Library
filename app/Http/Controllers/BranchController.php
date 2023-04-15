@@ -72,7 +72,7 @@ class BranchController extends Controller
      */
     public function edit($id)
     {
-        $branch= Branche::find($id);
+        $branch= Branche::with('promo')->find($id);
         $promos=Promo::all();
         return view('crud.edit.editBranch')->with(['branches'=>$branch,'promos'=>$promos]);
     }

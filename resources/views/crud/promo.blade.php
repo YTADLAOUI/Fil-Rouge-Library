@@ -6,20 +6,22 @@
           <h1 class="col fw-bold ms-3 mt-5">Promos</h1>
           <button class="col-4 me-5 mt-5 btn btn-dark w-auto" href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal1"><b>+ </b> Add Product</button>
         </div>
-          @if ($errors->any())
-          <div class="alert alert-danger mt-3">
-              <ul>
-                  @foreach ($errors->all() as $error)
-                      <li>{{ $error }}</li>
-                  @endforeach
-              </ul>
-          </div>
-        @endif
-          @if(session('success'))
-          <div class="alert alert-success mt-3">
-            {{ session('success') }}
+          <div class="mt-3">
+              @if ($errors->any())
+              <div class="alert alert-danger mt-3">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
             @endif
-        </div>
+              @if(session('success'))
+              <div class="alert alert-success mt-3">
+                {{ session('success') }}
+                @endif
+            </div>
+          </div>
     <div class="container pt-5 table-responsive">
             <table class="table bg-white rounded me-5">
                 <thead>
