@@ -4,8 +4,7 @@
   <div class="row items-center mb-5">
     <h1 class="col fw-bold ms-3 mt-5">Edit Branch</h1>
   </div> 
-  <div class="row">
-    <div class="col-sm-3"></div>
+  <div class="row justify-content-center">
       <div class="col-sm-6">
         <form action="{{url('branch/'.$branches->id)}}" method="POST" class="">
           {!!@csrf_field()!!}

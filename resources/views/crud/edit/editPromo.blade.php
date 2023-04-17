@@ -4,8 +4,8 @@
   <h1 class="col fw-bold ms-3 mt-5 mb-3">Edit Promo</h1>
   {{-- <a class ="ms-3 fw-bold" href="{{url('/promo')}}"><- Return</a> --}}
 </div> 
-<div class="row mt-5">
-  <div class="col-sm-3"></div>
+<div class="row justify-content-center mt-5">
+  {{-- <div class="col-sm-3"></div> --}}
       <div class="col-sm-6">
         <form action="{{url('branch/'.$promo->id)}}" method="POST" class="">
           {!!@csrf_field()!!}

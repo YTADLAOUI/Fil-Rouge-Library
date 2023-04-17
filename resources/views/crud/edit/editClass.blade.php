@@ -3,8 +3,8 @@
 <div class="row items-center me-0">
   <h1 class="col fw-bold ms-3 mt-5">Edit class</h1>
 </div> 
-<div class="d-flex justify-content-center" >
-    <form action="{{url('class/'.$class->id)}}" method="POST" class="">
+<div class="row justify-content-center" >
+    <form action="{{url('class/'.$class->id)}}" method="POST" class="col-sm-6">
       {!!@csrf_field()!!}
       @method("PATCH")
       <div class="form-floating mb-3 ">
@@ -31,8 +31,7 @@
           <label for="validationCustom04" class="form-label">Promo</label>
         </div>
         <div class="d-flex justify-content-center"> 
-          <button  class="btn btn-secondary me-3">return</button>
-          <button type="submit" class="btn btn-warning ">Update</button>
+          <button type="submit" class="btn btn-warning mt-3 bg-warning">Update</button>
         </div>
       </div>
     </form>
