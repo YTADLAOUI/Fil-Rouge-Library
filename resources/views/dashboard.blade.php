@@ -9,39 +9,39 @@
             </div>
 
             <div class="row justify-content-center" style="width: 90%">
-                <div class="col-md-3 col-xl-2 col-sm-10 col-12 me-3 ">
+                <div class="col-md-3 col-xl-2 col-sm-10 col-6 m-1 ">
                     <div class="card row">
                         <div class="text-center">
-                            <i class="bi bi-list-ul"></i>
-                            <h3>156</h3>
-                            <p>Comments</p>
+                          <i class="fs-4 bi-receipt"></i>
+                            <h3>{{$countRes}}</h3>
+                            <p>Réservations</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-xl-2 col-sm-10 col-12 me-3">
+                <div class="col-md-3 col-xl-2 col-sm-10 col-6 m-1">
                     <div class="card row">
                         <div class="text-center">
-                            <i class="bi bi-list-ul"></i>
-                            <h3>156</h3>
-                            <p>Comments</p>
+                          <i class="fs-4 bi-book"></i>
+                            <h3>{{$countLivre}}</h3>
+                            <p>livres</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-xl-2 col-sm-10 col-12 me-3">
+                <div class="col-md-3 col-xl-2 col-sm-10 col-6 m-1">
                     <div class="card row">
                         <div class="text-center">
-                            <i class="bi bi-list-ul"></i>
-                            <h3>156</h3>
-                            <p>Comments</p>
+                          <i class="fs-4 bi-person-fill-lock"></i>
+                            <h3>{{$countAdmin}}</h3>
+                            <p>admin</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-xl-2 col-sm-10 col-12 m-1">
+                <div class="col-md-3 col-xl-2 col-sm-10 col-6 m-1">
                     <div class="card row">
                         <div class="text-center">
-                            <i class="bi bi-list-ul"></i>
-                            <h3>156</h3>
-                            <p>Comments</p>
+                          <i class="fs-4 bi-person-fill"></i>
+                            <h3>{{$countEtudient}}</h3>
+                            <p>étudiantes</p>
                         </div>
                     </div>
                 </div>
@@ -99,8 +99,9 @@
 
     
     function idrecupere(e){
-    
-   var id= e.target.parentElement.parentElement.querySelector('input').value;
+       console.log(e.target.parentElement.parentElement.parentElement);
+   var id= e.target.parentElement.parentElement.parentElement.querySelector('input').value;
+   
   var url = `{{url('update/${id}')}}`;
   document.querySelector('#formstatus').setAttribute('action', url);
   // Send Ajax request

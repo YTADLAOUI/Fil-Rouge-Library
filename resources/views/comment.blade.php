@@ -5,7 +5,7 @@
 
   <div class="col-12 mb-3">
       <p class=" me-2"><b>Ajouter une commentaire</b></p>
-      <P><-RETURN</P>
+      
   </div>
   <diV class="d-flex justify-content-center me-0">
     <div class="card mt-3 " style="width: 25rem; ">

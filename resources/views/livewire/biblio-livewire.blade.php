@@ -55,7 +55,7 @@
                         @endif
                       </div>
                       <div class="d-flex justify-content-center">
-                       <a href={{url("bibli/".$livre->id)}}> <button  type="" class="btn btn-info"><i class="bi bi-eye me-1"></i>show</button></a>
+                       <a href={{url("bibli/".$livre->id)}}> <button  type="" class="btn btn-info text-light">show</button></a>
                       </div> 
                   </div> 
                 </div>

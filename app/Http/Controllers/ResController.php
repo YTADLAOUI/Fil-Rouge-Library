@@ -22,8 +22,12 @@ class ResController extends Controller
     }
     public function toutReservation(){
         $reservations=Reservation::with('users','livres.categories')->get();
-        // dd($reservations);
-        return view('dashboard')->with('reservations',$reservations);
+        $countReservation=Reservation::count();
+        $countLivre=Livre::count();
+        $countAdmin=User::where('role_id',1)->count();
+        $countEtudient=User::where('role_id',2)->count();
+        // dd($countEtudient);
+        return view('dashboard')->with(['reservations'=>$reservations,'countRes'=>$countReservation,'countLivre'=>$countLivre,'countAdmin'=>$countAdmin,'countEtudient'=>$countEtudient]);
     }
     
     public function reservation($id){
