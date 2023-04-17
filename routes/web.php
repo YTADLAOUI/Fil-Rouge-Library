@@ -40,7 +40,7 @@ Route::middleware([
     'verified','admin'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return redirect('reservationTotal');
     })->name('dashboard');
     Route::resource('/promo',PromoController::class)->except('create','show');
     Route::resource('/branch',BranchController::class)->except('create','show');

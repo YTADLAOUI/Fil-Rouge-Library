@@ -27,7 +27,7 @@ class ResController extends Controller
         $countAdmin=User::where('role_id',1)->count();
         $countEtudient=User::where('role_id',2)->count();
         // dd($countEtudient);
-        return view('dashboard')->with(['reservations'=>$reservations,'countRes'=>$countReservation,'countLivre'=>$countLivre,'countAdmin'=>$countAdmin,'countEtudient'=>$countEtudient]);
+        return view('/dashboard')->with(['reservations'=>$reservations,'countRes'=>$countReservation,'countLivre'=>$countLivre,'countAdmin'=>$countAdmin,'countEtudient'=>$countEtudient]);
     }
     
     public function reservation($id){
