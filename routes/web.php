@@ -62,6 +62,7 @@ Route::middleware([
 ])->group(function (){
     Route::resource('/bibli',BibliController::class)->only('index','show');
     Route::get('personelResrvation',[ResController::class,'index']);
+    Route::post('reservation/{id}',[ResController::class,'reservation']);
     Route::delete('reservation/{id}',[ResController::class,'destroy']);
 });
 Route::get('/bibli/{id}',[BibliController::class,'show']);

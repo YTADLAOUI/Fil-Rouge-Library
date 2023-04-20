@@ -45,10 +45,12 @@
                 </div>
                 <div>
                   <div class="d-flex justify-content-between mt-3">
+                    
                       <div>
                         @if( $livre->quantite_calcul>=1)
                           <form action="{{url('reservation/'.$livre->id)}}" method="POST">
                             @csrf
+                            
                             <button type="submit"  class="btn btn-primary bg-primary" >réserver</button>
                           </form>
                           {{-- <a href="{{route('test.reservation',$livre->id)}}" class="text-light">hhhhhh</a> --}}

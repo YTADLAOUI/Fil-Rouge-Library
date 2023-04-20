@@ -69,21 +69,15 @@
                                 </ul>
                                 <hr>
                                 @else
-                                <li class="nav-item">
-                                    <a href="{{url('/bibli')}}" class="nav-link align-middle px-0 text-light">
-                                        <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
-                                    </a>
+                                <li>
+                                    <a href="{{url('/bibli')}}" class="nav-link px-0 align-middle text-light">
+                                        <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span></a>
                                 </li>
+                                
                                 <li>
                                 <a href="{{url('/personelResrvation')}}" class="nav-link px-0 align-middle text-light">
                                     <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
                                 </li>
-                            <hr>
-                            <li>
-                                <a href="{{ url('/livre') }}" class="nav-link px-0 align-middle text-light">
-                                    <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">All Products</span> </a>
-                            </li>
-                            <hr>
                         </ul>
                         <hr>
                                 @endif   

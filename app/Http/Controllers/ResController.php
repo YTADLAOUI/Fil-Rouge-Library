@@ -14,7 +14,6 @@ class ResController extends Controller
         $userId=Auth::user()->id;
         // dd($userId);
          $reservation = Reservation::where('etudiant_id', $userId)
-                ->where('deleted_at',NULL)
                 ->with('livres.categories','livres.auteurs')
                 ->get();
                 // dd($reservation);
@@ -31,10 +30,11 @@ class ResController extends Controller
     }
     
     public function reservation($id){
+        
         $livre = Livre::find($id);
         // dd($livre->id);
         $reservationExistante = Reservation::where('livre_id', $livre->id)->where('etudiant_id', Auth::user()->id)->where('status', 'en attendant')->where('deleted_at',NULL)->first();
-        // dd($reservationExistante);
+        //  dd($reservationExistante);
         if($reservationExistante){
             return redirect('bibli/')->with('error', 'Vous avez déjà réservé ce livre en attente.');
         }else{

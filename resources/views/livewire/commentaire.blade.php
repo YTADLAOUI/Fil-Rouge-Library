@@ -10,33 +10,33 @@
                 <small class="ms-1 text-danger">{{session('alert')}}</small>
             @endif
         </div>  
-        <div>
-        @foreach ($commentaires as $commentaire)
-        <div class="container bg-light mt-3">
-            <div class="d-flex py-2">
-                <div class="second py-2 px-2"> <div><img src="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1nfGVufDB8fDB8fA%3D%3D&w=1000&q=80" width="18" height="18"><span class="text2">{{$commentaire->users->name}}</span></div>
-                <form id="form-{{$commentaire->id}}" class="d-none"  wire:submit.prevent="update({{$commentaire->id}})">
-                    <p>
-                        <input id="input-{{$commentaire->id}}" type="text" wire:model.defer="updatecommentaire" class="p-1  rounded-pill" value="">
-                        <button class="edit-btn-dark" type="submit"><b class="text-secondary" style="font-size: .8em">Save</b></button>
-                    </p>
-                </form>
-                {{-- @php
-                    dd(auth()->user()->id,'he',$commentaire->etudiant_id,'she');
-                @endphp --}}
-                    <div  class=" py-1 pt-2">
-                        <span id="commentaire-{{$commentaire->id}}" class="text1">{{$commentaire->content}}</span> 
-                        @if($commentaire->etudiant_id==auth()->user()->id)
-                        <div><button onclick="show('{{ $commentaire->id }}', 1)" class="text3 text3o">edit</button><span class="thumbup"></span>
-                            <button wire:click="destroy({{$commentaire->id}})" class="text4 text4i  text-decoration-none ">delete</button></div>
-                         @endif
+        <div style="max-width: 100%; max-height: 30em;" class="overflow-auto mb-3 p-3 mt-3 bg-light rounded" >
+            @foreach ($commentaires as $commentaire)
+            <div class="container bg-light mt-3" >
+                <div class="d-flex py-2">
+                    <div class="second py-2 px-2"> <div><img src="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1nfGVufDB8fDB8fA%3D%3D&w=1000&q=80" width="18" height="18"><span class="text2">{{$commentaire->users->name}}</span></div>
+                    <form id="form-{{$commentaire->id}}" class="d-none"  wire:submit.prevent="update({{$commentaire->id}})">
+                        <p>
+                            <input id="input-{{$commentaire->id}}" type="text" wire:model.defer="updatecommentaire" class="p-1  rounded-pill" value="">
+                            <button class="edit-btn-dark" type="submit"><b class="text-secondary" style="font-size: .8em">Save</b></button>
+                        </p>
+                    </form>
+                    {{-- @php
+                        dd(auth()->user()->id,'he',$commentaire->etudiant_id,'she');
+                    @endphp --}}
+                        <div  class=" py-1 pt-2">
+                            <span id="commentaire-{{$commentaire->id}}" class="text1">{{$commentaire->content}}</span> 
+                            @if($commentaire->etudiant_id==auth()->user()->id)
+                            <div><button onclick="show('{{ $commentaire->id }}', 1)" class="text3 text3o">edit</button><span class="thumbup"></span>
+                                <button wire:click="destroy({{$commentaire->id}})" class="text4 text4i  text-decoration-none ">delete</button></div>
+                            @endif
+                        </div>
+                    
                     </div>
-                
                 </div>
             </div>
+            @endforeach
         </div>
-        @endforeach
-    </div>
 </div>
 
 @livewireScripts
