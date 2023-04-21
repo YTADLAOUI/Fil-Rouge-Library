@@ -26,7 +26,7 @@
                         </div>
                         <form id="form-{{$commentaire->id}}" class="d-none "  wire:submit.prevent="update({{$commentaire->id}})">
                             <p>
-                                <input  id="input-{{$commentaire->id}}" type="text" wire:model.defer="updatecommentaire" class="p-1  rounded-pill m-2" value="">
+                                <input  id="input-{{$commentaire->id}}" type="text" wire:model.defer="updatecommentaire" class="p-1  rounded-pill m-2" >
                                 <button class="edit-btn-dark" type="submit"><b class="text-secondary" style="font-size: .8em">Save</b></button>
                             </p>
                         </form>

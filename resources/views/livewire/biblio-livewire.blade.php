@@ -11,7 +11,7 @@
   </div>
         
     @endif
-    <div class="container items-center col-12 col-sm-6 justify-content-sm-end  w-sm-50">
+    <div class="container items-center col-12 col-sm-6 justify-content-sm-end ">
       <input class=" form-control form-control-borderless shadow mt-4 rounded-pill mb-2" wire:model="search" type="search" placeholder="recherche par Titre">
     </div>
       <div class="col-sm-6"></div>
@@ -50,7 +50,7 @@
                         @if( $livre->quantite_calcul>=1)
                           <form action="{{url('reservation/'.$livre->id)}}" method="POST">
                             @csrf
-                            
+
                             <button type="submit"  class="btn btn-primary bg-primary" >réserver</button>
                           </form>
                           {{-- <a href="{{route('test.reservation',$livre->id)}}" class="text-light">hhhhhh</a> --}}
