@@ -1,10 +1,11 @@
 @extends('layouts.principal')
 @section('content')
 <div class="row items-center me-0">
+  
   <h1 class="col fw-bold ms-3 mt-5">Your Users</h1>
   <button class="col-4 me-5 mt-5 btn btn-dark w-auto mb-3" href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal"><b>+ </b> Add user</button>
 </div>
-                  @livewire('register-livewire')
+    @livewire('register-livewire')
                           {{-- <-------modal----------> --}}
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -91,8 +92,10 @@
                       <label for="validationCustom04" class="form-label">Groupe</label>
                     </div>
                   </div>
+                  <div class="modal-footer">
                     <button  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Send message</button>
+                    <button type="submit" class="btn btn-primary bg-primary">Send</button>
+                  </div>
 
                   </form>
         </div>

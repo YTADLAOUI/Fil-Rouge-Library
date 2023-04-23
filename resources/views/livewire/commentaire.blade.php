@@ -31,8 +31,8 @@
                             </p>
                         </form>
                         <div class="mt-2">
-                             @if($commentaire->etudiant_id==auth()->user()->id)
-                            <div><button onclick="show('{{ $commentaire->id }}', 1)" class="text3 text3o"><i class="bi bi-pen"></i></button><span class="thumbup"></span>
+                             @if($commentaire->etudiant_id==auth()->user()->id ||auth()->user()->role_id ==1)
+                            <div><button onclick="show('{{ $commentaire->id }}')" class="text3 text3o"><i class="bi bi-pen"></i></button><span class="thumbup"></span>
                                 <button wire:click="destroy({{$commentaire->id}})" class="text4 text4i  text-decoration-none "><i class="bi bi-trash3 text-danger ms-2"></i></button></div>
                             @endif</div>
                     </div>

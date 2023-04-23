@@ -17,7 +17,8 @@ class RegisterLivewire extends Component
     }
     public function render()
     {
-        $users=User::where('name', 'like', '%'.$this->search.'%')->paginate(5);
+        
+        $users=User::where('name', 'like', '%'.$this->search.'%')->paginate(8);
         return view('livewire.register-livewire')->with('users',$users);
     }
 }

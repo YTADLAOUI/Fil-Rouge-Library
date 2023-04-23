@@ -56,7 +56,7 @@ class UserRegisterController extends Controller
         }
         User::create($data);
     
-        return redirect('/regiser');
+        return redirect('/register');
     }
 
     /**
