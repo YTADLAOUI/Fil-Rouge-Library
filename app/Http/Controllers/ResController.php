@@ -30,7 +30,7 @@ class ResController extends Controller
     }
     
     public function reservation($id){
-        
+        // dd($id);
         $livre = Livre::find($id);
         // dd($livre->id);
         $reservationExistante = Reservation::where('livre_id', $livre->id)->where('etudiant_id', Auth::user()->id)->where('status', 'en attendant')->where('deleted_at',NULL)->first();

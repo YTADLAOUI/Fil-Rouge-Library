@@ -75,7 +75,8 @@ class ClassController extends Controller
      */
     public function edit($id)
     {
-        $class=Groupe::find($id);
+        $class=Groupe::with('branche.promo')->find($id);
+        // dd($class);
         $promos=Promo::all();
         $branches=Branche::all();
         return view('crud.edit.editClass')->with(['class'=>$class,'promos'=>$promos,'branches'=>$branches]);

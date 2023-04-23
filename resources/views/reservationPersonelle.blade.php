@@ -28,7 +28,8 @@
                       <td>{{$reserve->livres->auteurs->nom}}</td>
                       <td>{{$reserve->livres->categories->nom}}</td>
                       <td>{{$reserve->dateReservation}}</td>
-                      <td>{{$reserve->status}}</td>
+                      <td  style="padding: 12px;
+                      margin: 10PX;"class="d-flex justify-content-center @if($reserve->status=='en attendant') badge bg-primary text-light @elseif($reserve->status=='valide') badge bg-success text-light @elseif($reserve->status=='emprunt') badge bg-danger text-light @else badge bg-info text-dark @endif ">{{$reserve->status}}</td>
                       <td>
                         <form action="{{url('reservation/'.$reserve->id)}}" method="POST">
                           @csrf
