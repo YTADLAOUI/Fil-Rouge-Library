@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categorie;
+use App\Models\Livre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -102,7 +103,10 @@ class CategorieController extends Controller
      */
     public function destroy($id)
     {
+        $categ= Categorie::find($id);
+        $categId= $categ->id;
         Categorie::destroy($id);
+        Livre::where('categories_id',$categId)->delete();
         return redirect('/categorie')->with('success', 'Categorie delete avec succès.');;
     }
 }

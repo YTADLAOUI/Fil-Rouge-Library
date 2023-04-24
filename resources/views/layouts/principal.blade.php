@@ -54,7 +54,7 @@
                                         <i class="fs-4 bi-book-half"></i><span class="ms-1 d-none d-sm-inline">Les Livres</span> </a>
                                         <ul class="collapse nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
                                         <li class="w-100">
-                                            <a href="{{url('/reservationTotal')}}" class="nav-link px-0 text-light"> <i class="fs-5 bi-files"></i><span class="ms-1 d-none d-sm-inline">Tout les livres</span> </a>
+                                            <a href="{{url('/livre')}}" class="nav-link px-0 text-light"> <i class="fs-5 bi-files"></i><span class="ms-1 d-none d-sm-inline">Tout les livres</span> </a>
                                         </li>
                                         <li class="w-100">
                                             <a href="{{url('/personelResrvation')}}" class="nav-link px-0 text-light"> <i class="fs-5 bi-file"></i><span class="ms-1 d-none d-sm-inline">Votre Livre</span> </a>

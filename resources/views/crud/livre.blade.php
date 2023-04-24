@@ -1,7 +1,7 @@
 @extends('layouts.principal')
 @section('content')
 <div class="row items-center me-0">
-  <h1 class="col fw-bold ms-3 mt-5">Class</h1>
+  <h1 class="col fw-bold ms-3 mt-5">livre</h1>
   {{-- <button type="button" class="col-4 me-5 mt-5 btn btn-dark w-auto" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><b>+ </b> Add Product</button> --}}
   <button class="col-4 me-5 mt-5 btn btn-dark w-auto mb-3" href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal3"><b>+ </b> Add Product</button>
 </div>
@@ -11,7 +11,7 @@
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
-<h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+<h1 class="modal-title fs-5" id="exampleModalLabel">New livre</h1>
 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body">
@@ -58,8 +58,8 @@
 </div>
 <div class="modal-footer">
   <button  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-  <button type="submit" class="btn btn-primary">Send </button>
-  </div>
+  <button type="submit" class="btn btn-primary bg-primary">save</button>
+</div>
 </form>
 </div>
 

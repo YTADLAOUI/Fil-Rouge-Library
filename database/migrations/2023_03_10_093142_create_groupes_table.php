@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('nom');
             $table->unsignedBigInteger('branche_id');
             $table->foreign('branche_id')
-            ->references('id')->on('branches');
+            ->references('id')->on('branches')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

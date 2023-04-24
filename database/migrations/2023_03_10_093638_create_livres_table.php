@@ -24,7 +24,9 @@ return new class extends Migration
                   ->references('id')->on('categories');
             $table->unsignedBigInteger('auteure_id');
             $table->foreign('auteure_id')
-                  ->references('id')->on('auteures');
+                  ->references('id')->on('auteures')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

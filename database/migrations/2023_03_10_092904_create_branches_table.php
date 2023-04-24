@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('nom');
             $table->unsignedBigInteger('promo_id');
             $table->foreign('promo_id')
-                   ->references('id')->on('promos');
+                   ->references('id')->on('promos')
+                   ->onUpdate('cascade')
+                   ->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

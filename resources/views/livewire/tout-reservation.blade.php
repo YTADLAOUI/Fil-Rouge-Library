@@ -34,15 +34,15 @@
                     <td>{{$key+1}}</td>
                 <td><img class="rounded" src="{{asset("images/".$reservation->users->profile_photo_path)}}" width="50" height="60"></td>
                     <td class="text-center">{{$reservation->users->name}}</td>
-                    <td class="text-center">{{$reservation->livres->titre}}</td>
+                    <td class="text-center">{{$reservation->livres?->titre}}</td>
                     <td class="text-center">{{$reservation->dateReservation}}</td>
                     <td class="text-center">
                       {{$reservation->dateEmprunt}}
                     </td>
                     <td class="text-center">{{$reservation->datePreuveReturn}}</td>
                     <td class="text-center">{{$reservation->dateDeReturn}}</td>
-                    <td class="text-center">{{$reservation->livres->quantite_calcul}}</td>
-                    <td class="text-center">{{$reservation->livres->categories->nom}}</td>
+                    <td class="text-center">{{$reservation->livres?->quantite_calcul}}</td>
+                    <td class="text-center">{{$reservation->livres?->categories->nom}}</td>
                     <td style="padding: 12px;
                     margin-top: 10PX;" class="d-flex justify-content-center @if($reservation->status=='en attendant') badge bg-primary text-light @elseif($reservation->status=='valide') badge bg-success text-light @elseif($reservation->status=='emprunt') badge bg-danger text-light @else badge bg-info text-dark @endif ">{{$reservation->status}}</td>
                     <td class="text-center"><button href="#modal-meal" data-bs-toggle="modal"data-bs-target="#exampleModal" id="edit"  class="text-decoration-none text-primary fw-bold" onclick="idrecupere(event)"><i class="fs-5 bi-pencil-square"></i></button></td>

@@ -6,6 +6,7 @@ use App\Http\Requests\LiverValidation;
 use App\Models\Auteure;
 use App\Models\Categorie;
 use App\Models\Livre;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -121,7 +122,10 @@ class livreController extends Controller
      */
     public function destroy($id)
     {
+        $livre=Livre::find($id);
+        $livreId=$livre->id;
         Livre::destroy($id);
+        Reservation::where('livre_id', $livreId)->delete();
         
         return redirect('/livre')->with('success', 'Livre delete avec succès.');
     }

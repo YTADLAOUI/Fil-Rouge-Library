@@ -19,7 +19,9 @@ return new class extends Migration
             ->references('id')->on('groupes');
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')
-                  ->references('id')->on('roles');
+                  ->references('id')->on('roles')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
              $table->softDeletes();
         });
     }

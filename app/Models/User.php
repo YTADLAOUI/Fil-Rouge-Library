@@ -32,7 +32,6 @@ class User extends Authenticatable
         'profile_photo_path',
         'role_id',
         'groupe_id'
-        
     ];
    public function groupe(){
     return $this->belongsTo(Groupe::class);
