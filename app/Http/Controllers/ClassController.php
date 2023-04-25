@@ -17,9 +17,14 @@ class ClassController extends Controller
      */
     public function index()
     {
-       $classes= Groupe::with(['branche.promo'])->get();
+       $classes= Groupe::with(['branche.promo'])->whereHas('branche.promo', function ($query) {
+        $query->where('deleted_at', null);
+    })
+    ->get();
        $promos= Promo::all();
-       $branches=Branche::all();
+       $branches=Branche::with('promo')->whereHas('promo', function ($query) {
+        $query->where('deleted_at', null);
+    })->get();
        return view('crud.class')->with(['classes'=>$classes,'promos'=>$promos,'branches'=>$branches]);
     }
 

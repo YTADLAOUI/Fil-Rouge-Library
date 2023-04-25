@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Auteure;
 use App\Models\Branche;
 use App\Models\Promo;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -17,7 +18,10 @@ class BranchController extends Controller
      */
     public function index()
     {
-        $branches=Branche::with('promo')->get();
+        $branches=Branche::with('promo')->whereHas('promo', function ($query) {
+            $query->where('deleted_at', null);
+        })
+        ->get();
         $promos=Promo::all();
         return view('crud.branch')->with(['branches' => $branches, 'promos' => $promos]);
     }

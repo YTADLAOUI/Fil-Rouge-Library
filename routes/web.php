@@ -45,7 +45,7 @@ Route::middleware([
     Route::resource('/promo',PromoController::class)->except('create','show');
     Route::resource('/branch',BranchController::class)->except('create','show');
     Route::resource('/class', ClassController::class)->except('create','show');
-    // Route::resource('/register',UserRegisterController::class)->except('create','show');
+    Route::resource('/register',UserRegisterController::class)->except('create','show');
     Route::resource('/auteur',AuteureController::class)->except('create','show');
     Route::resource('/categorie',CategorieController::class)->except('create','show');
     Route::resource('/livre',livreController::class)->except('create','show');
@@ -53,6 +53,7 @@ Route::middleware([
     Route::post('reservation/{id}',[ResController::class,'reservation']);
     Route::get('personelResrvation',[ResController::class,'index']);
     Route::delete('reservation/{id}',[ResController::class,'destroy']);
+    Route::delete('reservationsTotal/{id}',[ResController::class,'effacer']);
     Route::get('/reservationTotal',[ResController::class,'toutReservation']);
     Route::patch('update/{id}',[UpdateStatus::class,'update']);
     Route::post('/status/edits',[StatusController::class,'edit'])->name('status.get');

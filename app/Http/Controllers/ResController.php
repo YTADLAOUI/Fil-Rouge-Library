@@ -18,7 +18,8 @@ class ResController extends Controller
         return view('reservationPersonelle')->with('reservations',$reservation);
     }
     public function toutReservation(){
-        $reservations=Reservation::with('users','livres.categories')->get();
+        $reservations=Reservation::with('users','livres.categories')
+        ->get();
         $countReservation=Reservation::count();
         $countLivre=Livre::count();
         $countAdmin=User::where('role_id',1)->count();
@@ -57,5 +58,11 @@ class ResController extends Controller
     {
         Reservation::destroy($id);
         return redirect('personelResrvation/')->with('success', 'destroy effectuée avec succès.');
+    }
+
+    public function effacer( $id)
+    {
+        Reservation::destroy($id);
+        return redirect('dashboard/')->with('success', 'destroy effectuée avec succès.');
     }
 }

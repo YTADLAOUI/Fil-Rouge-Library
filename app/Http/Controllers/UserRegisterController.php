@@ -21,7 +21,10 @@ class UserRegisterController extends Controller
         
         $users= User::with(['role','groupe'])->get();
         // dd($users);
-        $groupes=Groupe::all();
+        $groupes=Groupe::with(['branche.promo'])->whereHas('branche.promo', function ($query) {
+            $query->where('deleted_at', null);
+        })
+        ->get();
        return view('crud.add')->with(['users'=>$users,'groupes'=>$groupes]);
     }
 
